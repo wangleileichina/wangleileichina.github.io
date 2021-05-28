@@ -280,6 +280,146 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/27/git-cheatsheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/05/27/git-cheatsheet/" itemprop="url">
+                  Git Cheatsheet
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-27T11:10:28+08:00">
+                2021-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>branch  </p>
+<pre><code>git checkout &lt;branch&gt;
+git checkout -b &lt;branch&gt;
+git branch -a</code></pre><p>delete branch  </p>
+<pre><code>git branch -d &lt;branch&gt;
+git push origin --delete &lt;branch&gt;</code></pre><p>combine commits  </p>
+<pre><code>git rebase -i HEAD~n
+git push -f</code></pre><p>abandon local change:  </p>
+<pre><code>git fetch --all
+git reset --hard origin/master
+git pull</code></pre><p>Git History  </p>
+<pre><code>April 2005
+Linux Torvalds
+replacement for bitkeeper to manage Linux kernel source code
+open source and free software
+distributed version control
+compatible with linux ,macOS windows
+faster than other SCMs(100times in some cases)
+better safeguards against data corruption
+github launched in 2008
+purchased by Microsoft 2018</code></pre><p>configuration:  </p>
+<pre><code>system : etc/gitconfig            git config --system
+user: ~/.gitconfig                git config --global
+project: my_project/.git/config   git config</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/25/My-New-Post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -561,7 +701,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Git Cheatsheet</title>
+      <link href="2021/05/27/git-cheatsheet/"/>
+      <url>2021/05/27/git-cheatsheet/</url>
+      
+        <content type="html"><![CDATA[<p>branch  </p><pre><code>git checkout &lt;branch&gt;git checkout -b &lt;branch&gt;git branch -a</code></pre><p>delete branch  </p><pre><code>git branch -d &lt;branch&gt;git push origin --delete &lt;branch&gt;</code></pre><p>combine commits  </p><pre><code>git rebase -i HEAD~ngit push -f</code></pre><p>abandon local change:  </p><pre><code>git fetch --allgit reset --hard origin/mastergit pull</code></pre><p>Git History  </p><pre><code>April 2005Linux Torvaldsreplacement for bitkeeper to manage Linux kernel source codeopen source and free softwaredistributed version controlcompatible with linux ,macOS windowsfaster than other SCMs(100times in some cases)better safeguards against data corruptiongithub launched in 2008purchased by Microsoft 2018</code></pre><p>configuration:  </p><pre><code>system : etc/gitconfig            git config --systemuser: ~/.gitconfig                git config --globalproject: my_project/.git/config   git config</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>My New Post</title>
       <link href="2021/05/25/My-New-Post/"/>
       <url>2021/05/25/My-New-Post/</url>
