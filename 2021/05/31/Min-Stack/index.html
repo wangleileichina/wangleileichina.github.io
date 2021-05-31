@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="leetcode,155,">
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="Hello World">
+<meta name="description" content="DescriptionDesign a stack that supports push, pop, top, and retrieving the minimum element in constant time.Implement the MinStack class:MinStack() initializes the stack object.void push(val) pushes t">
+<meta name="keywords" content="leetcode,155">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="http://yoursite.com/2021/05/25/My-New-Post/index.html">
+<meta property="og:title" content="Min-Stack">
+<meta property="og:url" content="http://yoursite.com/2021/05/31/Min-Stack/index.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="Hello World">
+<meta property="og:description" content="DescriptionDesign a stack that supports push, pop, top, and retrieving the minimum element in constant time.Implement the MinStack class:MinStack() initializes the stack object.void push(val) pushes t">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-05-25T16:58:59.793Z">
+<meta property="og:updated_time" content="2021-05-31T15:57:40.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Post">
-<meta name="twitter:description" content="Hello World">
+<meta name="twitter:title" content="Min-Stack">
+<meta name="twitter:description" content="DescriptionDesign a stack that supports push, pop, top, and retrieving the minimum element in constant time.Implement the MinStack class:MinStack() initializes the stack object.void push(val) pushes t">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2021/05/25/My-New-Post/">
+  <link rel="canonical" href="http://yoursite.com/2021/05/31/Min-Stack/">
 
 
 
 
 
-  <title> My New Post | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Min-Stack | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -282,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/25/My-New-Post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/31/Min-Stack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -303,7 +304,7 @@
             
             
               
-                My New Post
+                Min-Stack
               
             
           </h1>
@@ -318,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-25T21:55:46+08:00">
-                2021-05-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-31T23:15:01+08:00">
+                2021-05-31
               </time>
             
 
@@ -354,7 +355,59 @@
       
 
       
-        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.<br>Implement the MinStack class:<br>MinStack() initializes the stack object.<br>void push(val) pushes the element val onto the stack.<br>void pop() removes the element on the top of the stack.<br>int top() gets the top element of the stack.<br>int getMin() retrieves the minimum element in the stack.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>[“MinStack”,”push”,”push”,”push”,”getMin”,”pop”,”top”,”getMin”]<br>[[],[-2],[0],[-3],[],[],[],[]]</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>[null,null,null,null,-3,null,0,-2]</p>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin(); // return -3<br>minStack.pop();<br>minStack.top();    // return 0<br>minStack.getMin(); // return -2</p>
+<h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints:"></a>Constraints:</h3><p>-231 &lt;= val &lt;= 231 - 1<br>Methods pop, top and getMin operations will always be called on non-empty stacks.<br>At most 3 * 104 calls will be made to push, pop, top, and getMin.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><pre><code>class MinStack:
+
+    def __init__(self):
+        self.stack = []
+        self.minStack = []
+
+    def push(self, val: int) -&gt; None:
+        self.stack.append(val)
+        if not self.minStack or val &lt;= self.minStack[-1]:
+            self.minStack.append(val)
+
+    def pop(self) -&gt; None:
+        if self.stack:
+            num = self.stack.pop()
+            if self.minStack and num == self.minStack[-1]:
+                self.minStack.pop()
+
+    def top(self) -&gt; int:
+        return self.stack[-1]
+
+    def getMin(self) -&gt; int:
+        return self.minStack[-1]</code></pre><p>One stack</p>
+<pre><code>class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_value = -1
+
+    def push(self, x: int) -&gt; None:
+        if not self.stack:
+            self.stack.append(0)
+            self.min_value = x
+        else:
+            diff = x-self.min_value
+            self.stack.append(diff)
+            self.min_value = self.min_value if diff &gt; 0 else x
+
+    def pop(self) -&gt; None:
+        if self.stack:
+            diff = self.stack.pop()
+            if diff &lt; 0:
+                top = self.min_value
+                self.min_value = top - diff
+
+    def top(self) -&gt; int:
+        return self.min_value if self.stack[-1] &lt; 0 else self.stack[-1] + self.min_value
+
+    def getMin(self) -&gt; int:
+        return self.min_value if self.stack else -1</code></pre>
       
     </div>
 
@@ -375,6 +428,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+            <a href="/tags/155/" rel="tag"># 155</a>
+          
+        </div>
+      
 
       
         
@@ -384,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2021/05/27/git-cheatsheet/" rel="next" title="Git Cheatsheet">
+                <i class="fa fa-chevron-left"></i> Git Cheatsheet
               </a>
             
           </div>
@@ -393,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/05/27/git-cheatsheet/" rel="prev" title="Git Cheatsheet">
-                Git Cheatsheet <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">2.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">2.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation"><span class="nav-number">2.3.</span> <span class="nav-text">Explanation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraints"><span class="nav-number">2.4.</span> <span class="nav-text">Constraints:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution:</span></a></li></ol></div>
             
 
           </div>
