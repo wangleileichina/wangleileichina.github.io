@@ -4,6 +4,82 @@
   
     
     <entry>
+      <title>Coding Interviews</title>
+      <link href="2021/06/01/point-to-offer/"/>
+      <url>2021/06/01/point-to-offer/</url>
+      
+        <content type="html"><![CDATA[<h3 id="16-Pow-x-n"><a href="#16-Pow-x-n" class="headerlink" title="16.Pow(x, n)"></a>16.Pow(x, n)</h3><pre><code>def myPow(self, x: float, n: int) -&gt; float:    if x == 0.0: return 0.0    res = 1    if n &lt; 0:        x, n = 1 / x, -n    while n:        if n &amp; 1 == 1:            res *= x        x *= x        n &gt;&gt;= 1 # n &gt;&gt; 1    return res</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CodingInterviews </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux cheatsheet</title>
+      <link href="2021/06/01/linux-cheatsheet/"/>
+      <url>2021/06/01/linux-cheatsheet/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python Notes</title>
+      <link href="2021/06/01/python-notes/"/>
+      <url>2021/06/01/python-notes/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Rotating-functions-in-Deque"><a href="#Rotating-functions-in-Deque" class="headerlink" title="Rotating functions in Deque"></a>Rotating functions in Deque</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import collections as col</span><br><span class="line">my_deque = col.deque(<span class="string">'AABCDDEFD'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'Dequeue: '</span> + str(my_deque)</span></span>)</span><br><span class="line"><span class="selector-id">#rotate</span> to the <span class="attribute">right</span>, <span class="number">3</span> elements</span><br><span class="line">my_deque.rotate(<span class="number">3</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'Deque after rotating:'</span> + str(my_deque)</span></span>)</span><br></pre></td></tr></table></figure><p>Deque after rotating:deque([‘E’, ‘F’, ‘D’, ‘A’, ‘A’, ‘B’, ‘C’, ‘D’, ‘D’])</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>One Python Craftsman</title>
+      <link href="2021/06/01/one-python-craftsman/"/>
+      <url>2021/06/01/one-python-craftsman/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Min-Stack</title>
       <link href="2021/05/31/Min-Stack/"/>
       <url>2021/05/31/Min-Stack/</url>
@@ -29,7 +105,7 @@
       <link href="2021/05/27/git-cheatsheet/"/>
       <url>2021/05/27/git-cheatsheet/</url>
       
-        <content type="html"><![CDATA[<p>branch  </p><pre><code>git checkout &lt;branch&gt;git checkout -b &lt;branch&gt;git branch -a</code></pre><p>delete branch  </p><pre><code>git branch -d &lt;branch&gt;git push origin --delete &lt;branch&gt;</code></pre><p>combine commits  </p><pre><code>git rebase -i HEAD~ngit push -f</code></pre><p>abandon local change:  </p><pre><code>git fetch --allgit reset --hard origin/mastergit pull</code></pre><p>Git History  </p><pre><code>April 2005Linux Torvaldsreplacement for bitkeeper to manage Linux kernel source codeopen source and free softwaredistributed version controlcompatible with linux ,macOS windowsfaster than other SCMs(100times in some cases)better safeguards against data corruptiongithub launched in 2008purchased by Microsoft 2018</code></pre><p>configuration:  </p><pre><code>system : etc/gitconfig            git config --systemuser: ~/.gitconfig                git config --globalproject: my_project/.git/config   git config</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>delete branch  </p><pre><code>git branch -d &lt;branch&gt;git push origin --delete &lt;branch&gt;</code></pre><p>combine commits  </p><pre><code>git rebase -i HEAD~ngit push -f</code></pre><p>abandon local change:  </p><pre><code>git fetch --allgit reset --hard origin/mastergit pull</code></pre><p>init:</p><p>Git History  </p><pre><code>April 2005Linux Torvaldsreplacement for bitkeeper to manage Linux kernel source codeopen source and free softwaredistributed version controlcompatible with linux ,macOS windowsfaster than other SCMs(100times in some cases)better safeguards against data corruptiongithub launched in 2008purchased by Microsoft 2018</code></pre><p>configuration:  </p><pre><code>system : etc/gitconfig            git config --systemuser: ~/.gitconfig                git config --globalproject: my_project/.git/config   git config</code></pre>]]></content>
       
       
       
