@@ -89,7 +89,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="PREPARES">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://wangleileichina@github.io/index.html">
 <meta property="og:site_name" content="PREPARES">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://wangleileichina@github.io/">
 
 
 
@@ -280,7 +280,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/01/point-to-offer/">
+    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/02/preSum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/06/02/preSum/" itemprop="url">
+                  preSum
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-02T11:10:15+08:00">
+                2021-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>preSum = [0] + nums
+for i in range(1, len(preSum)):
+    preSum[i] = preSum[i-1] + preSum[i]</code></pre><h3 id="523-Continuous-Subarray-Sum"><a href="#523-Continuous-Subarray-Sum" class="headerlink" title="523. Continuous Subarray Sum"></a>523. Continuous Subarray Sum</h3><p>Given an integer array nums and an integer k, return true if nums has a continuous subarray of size at least two whose elements sum up to a multiple of k, or false otherwise.<br>An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.<br>nums = [23,2,4,6,7], k = 6 True<br>nums = [23,2,6,4,7], k = 13 False<br>TLE:</p>
+<pre><code>preSum = [0] + nums
+for i in range(1, len(preSum)):
+    preSum[i] = preSum[i-1] + preSum[i]
+for i in range(len(preSum) - 2):
+    for j in range(i+2, len(preSum)):
+        if (preSum[j] - preSum[i]) % k == 0:
+            return True
+return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % k == presum[i] % k</p>
+<pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
+    preSum = [0] + nums
+    for i in range(1, len(preSum)):
+        preSum[i] = preSum[i-1] + preSum[i]
+    modset = set()
+    for i in range(len(preSum) - 2):
+        modset.add(preSum[i] % k)
+        if preSum[i + 2] % k  in modset:
+            return True
+    return False</code></pre><p>Extend : the number of continuous subarray sum:</p>
+<pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
+    preSum = [0] + nums
+    for i in range(1, len(preSum)):
+        preSum[i] = preSum[i-1] + preSum[i]
+    modDict = dict()
+    res = 0
+    for i in range(len(preSum) - 2):
+        cur = preSum[i] % k
+        modDict[cur] = modDict.get(cur, 0) + 1
+        nex = preSum[i + 2] % k
+        if nex  in modDict:
+            res += modDict[nex]
+    return res</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/01/point-to-offer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -407,7 +557,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/01/linux-cheatsheet/">
+    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/01/linux-cheatsheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -524,7 +674,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/01/python-notes/">
+    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/01/python-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -644,7 +794,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/01/one-python-craftsman/">
+    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/01/one-python-craftsman/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -752,175 +902,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/31/Min-Stack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2021/05/31/Min-Stack/" itemprop="url">
-                  Min-Stack
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-31T23:15:01+08:00">
-                2021-05-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.<br>Implement the MinStack class:<br>MinStack() initializes the stack object.<br>void push(val) pushes the element val onto the stack.<br>void pop() removes the element on the top of the stack.<br>int top() gets the top element of the stack.<br>int getMin() retrieves the minimum element in the stack.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>[“MinStack”,”push”,”push”,”push”,”getMin”,”pop”,”top”,”getMin”]<br>[[],[-2],[0],[-3],[],[],[],[]]</p>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>[null,null,null,null,-3,null,0,-2]</p>
-<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin(); // return -3<br>minStack.pop();<br>minStack.top();    // return 0<br>minStack.getMin(); // return -2</p>
-<h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints:"></a>Constraints:</h3><p>-231 &lt;= val &lt;= 231 - 1<br>Methods pop, top and getMin operations will always be called on non-empty stacks.<br>At most 3 * 104 calls will be made to push, pop, top, and getMin.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><pre><code>class MinStack:
-
-    def __init__(self):
-        self.stack = []
-        self.minStack = []
-
-    def push(self, val: int) -&gt; None:
-        self.stack.append(val)
-        if not self.minStack or val &lt;= self.minStack[-1]:
-            self.minStack.append(val)
-
-    def pop(self) -&gt; None:
-        if self.stack:
-            num = self.stack.pop()
-            if self.minStack and num == self.minStack[-1]:
-                self.minStack.pop()
-
-    def top(self) -&gt; int:
-        return self.stack[-1]
-
-    def getMin(self) -&gt; int:
-        return self.minStack[-1]</code></pre><p>One stack</p>
-<pre><code>class MinStack:
-    def __init__(self):
-        self.stack = []
-        self.min_value = -1
-
-    def push(self, x: int) -&gt; None:
-        if not self.stack:
-            self.stack.append(0)
-            self.min_value = x
-        else:
-            diff = x-self.min_value
-            self.stack.append(diff)
-            self.min_value = self.min_value if diff &gt; 0 else x
-
-    def pop(self) -&gt; None:
-        if self.stack:
-            diff = self.stack.pop()
-            if diff &lt; 0:
-                top = self.min_value
-                self.min_value = top - diff
-
-    def top(self) -&gt; int:
-        return self.min_value if self.stack[-1] &lt; 0 else self.stack[-1] + self.min_value
-
-    def getMin(self) -&gt; int:
-        return self.min_value if self.stack else -1</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -979,7 +960,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

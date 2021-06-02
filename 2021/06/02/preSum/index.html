@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="preSum,">
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="Hello World">
+<meta name="description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]523. Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuou">
+<meta name="keywords" content="preSum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="http://yoursite.com/2021/05/25/My-New-Post/index.html">
+<meta property="og:title" content="preSum">
+<meta property="og:url" content="http://wangleileichina@github.io/2021/06/02/preSum/index.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="Hello World">
+<meta property="og:description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]523. Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuou">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-05-31T16:03:39.458Z">
+<meta property="og:updated_time" content="2021-06-02T15:15:58.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Post">
-<meta name="twitter:description" content="Hello World">
+<meta name="twitter:title" content="preSum">
+<meta name="twitter:description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]523. Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuou">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2021/05/25/My-New-Post/">
+  <link rel="canonical" href="http://wangleileichina@github.io/2021/06/02/preSum/">
 
 
 
 
 
-  <title> My New Post | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> preSum | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -282,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/25/My-New-Post/">
+    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/02/preSum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -303,7 +304,7 @@
             
             
               
-                My New Post
+                preSum
               
             
           </h1>
@@ -318,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-25T21:55:46+08:00">
-                2021-05-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-02T11:10:15+08:00">
+                2021-06-02
               </time>
             
 
@@ -354,7 +355,40 @@
       
 
       
-        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>
+        <pre><code>preSum = [0] + nums
+for i in range(1, len(preSum)):
+    preSum[i] = preSum[i-1] + preSum[i]</code></pre><h3 id="523-Continuous-Subarray-Sum"><a href="#523-Continuous-Subarray-Sum" class="headerlink" title="523. Continuous Subarray Sum"></a>523. Continuous Subarray Sum</h3><p>Given an integer array nums and an integer k, return true if nums has a continuous subarray of size at least two whose elements sum up to a multiple of k, or false otherwise.<br>An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.<br>nums = [23,2,4,6,7], k = 6 True<br>nums = [23,2,6,4,7], k = 13 False<br>TLE:</p>
+<pre><code>preSum = [0] + nums
+for i in range(1, len(preSum)):
+    preSum[i] = preSum[i-1] + preSum[i]
+for i in range(len(preSum) - 2):
+    for j in range(i+2, len(preSum)):
+        if (preSum[j] - preSum[i]) % k == 0:
+            return True
+return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % k == presum[i] % k</p>
+<pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
+    preSum = [0] + nums
+    for i in range(1, len(preSum)):
+        preSum[i] = preSum[i-1] + preSum[i]
+    modset = set()
+    for i in range(len(preSum) - 2):
+        modset.add(preSum[i] % k)
+        if preSum[i + 2] % k  in modset:
+            return True
+    return False</code></pre><p>Extend : the number of continuous subarray sum:</p>
+<pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
+    preSum = [0] + nums
+    for i in range(1, len(preSum)):
+        preSum[i] = preSum[i-1] + preSum[i]
+    modDict = dict()
+    res = 0
+    for i in range(len(preSum) - 2):
+        cur = preSum[i] % k
+        modDict[cur] = modDict.get(cur, 0) + 1
+        nex = preSum[i + 2] % k
+        if nex  in modDict:
+            res += modDict[nex]
+    return res</code></pre>
       
     </div>
 
@@ -375,6 +409,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/preSum/" rel="tag"># preSum</a>
+          
+        </div>
+      
 
       
         
@@ -384,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2021/06/01/point-to-offer/" rel="next" title="Coding Interviews">
+                <i class="fa fa-chevron-left"></i> Coding Interviews
               </a>
             
           </div>
@@ -393,10 +433,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/05/27/git-cheatsheet/" rel="prev" title="Git Cheatsheet">
-                Git Cheatsheet <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,7 +513,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -528,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#523-Continuous-Subarray-Sum"><span class="nav-number">1.</span> <span class="nav-text">523. Continuous Subarray Sum</span></a></li></ol></div>
             
 
           </div>
