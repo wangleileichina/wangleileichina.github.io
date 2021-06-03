@@ -507,17 +507,7 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
       
         
           
-            <h3 id="16-Pow-x-n"><a href="#16-Pow-x-n" class="headerlink" title="16.Pow(x, n)"></a>16.Pow(x, n)</h3><pre><code>def myPow(self, x: float, n: int) -&gt; float:
-    if x == 0.0: return 0.0
-    res = 1
-    if n &lt; 0:
-        x, n = 1 / x, -n
-    while n:
-        if n &amp; 1 == 1:
-            res *= x
-        x *= x
-        n &gt;&gt;= 1 # n &gt;&gt; 1
-    return res</code></pre>
+            <h3 id="16-Pow-x-n"><a href="#16-Pow-x-n" class="headerlink" title="16.Pow(x, n)"></a>16.Pow(x, n)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myPow</span><span class="params">(self, x: float, n: int)</span> -&gt; float:</span></span><br><span class="line">    <span class="comment">#if x == 0.0: return 0.0</span></span><br><span class="line">    <span class="keyword">if</span> math.isclose(x, <span class="number">0.0</span>): <span class="keyword">return</span> <span class="number">0.0</span></span><br><span class="line">    res = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">0</span>:</span><br><span class="line">        x, n = <span class="number">1</span> / x, -n</span><br><span class="line">    <span class="keyword">while</span> n:</span><br><span class="line">        <span class="keyword">if</span> n &amp; <span class="number">1</span> == <span class="number">1</span>:</span><br><span class="line">            res *= x</span><br><span class="line">        x *= x</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span> <span class="comment"># n &gt;&gt; 1</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
           
         
       
