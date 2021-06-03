@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="CodingInterviews,">
+  <meta name="keywords" content="git,">
 
 
 
@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="16.Pow(x, n)def myPow(self, x: float, n: int) -&amp;gt; float:     if x == 0.0: return 0.0     res = 1     if n &amp;lt; 0:         x, n = 1 / x, -n     while n:         if n &amp;amp; 1 == 1:             res *=">
-<meta name="keywords" content="CodingInterviews">
+<meta name="description" content="delete branch   git branch -d &amp;lt;branch&amp;gt; git push origin --delete &amp;lt;branch&amp;gt;combine commits   git rebase -i HEAD~n git push -fabandon local change:   git fetch --all git reset --hard origin/ma">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coding Interviews">
-<meta property="og:url" content="http://wangleileichina@github.io/2021/06/01/point-to-offer/index.html">
+<meta property="og:title" content="Git Cheatsheet">
+<meta property="og:url" content="https://wangleileichina.github.io/p/git-cheatsheet.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="16.Pow(x, n)def myPow(self, x: float, n: int) -&amp;gt; float:     if x == 0.0: return 0.0     res = 1     if n &amp;lt; 0:         x, n = 1 / x, -n     while n:         if n &amp;amp; 1 == 1:             res *=">
+<meta property="og:description" content="delete branch   git branch -d &amp;lt;branch&amp;gt; git push origin --delete &amp;lt;branch&amp;gt;combine commits   git rebase -i HEAD~n git push -fabandon local change:   git fetch --all git reset --hard origin/ma">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2021-06-02T15:15:58.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coding Interviews">
-<meta name="twitter:description" content="16.Pow(x, n)def myPow(self, x: float, n: int) -&amp;gt; float:     if x == 0.0: return 0.0     res = 1     if n &amp;lt; 0:         x, n = 1 / x, -n     while n:         if n &amp;amp; 1 == 1:             res *=">
+<meta name="twitter:title" content="Git Cheatsheet">
+<meta name="twitter:description" content="delete branch   git branch -d &amp;lt;branch&amp;gt; git push origin --delete &amp;lt;branch&amp;gt;combine commits   git rebase -i HEAD~n git push -fabandon local change:   git fetch --all git reset --hard origin/ma">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://wangleileichina@github.io/2021/06/01/point-to-offer/">
+  <link rel="canonical" href="https://wangleileichina.github.io/p/git-cheatsheet.html">
 
 
 
 
 
-  <title> Coding Interviews | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Git Cheatsheet | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -283,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://wangleileichina@github.io/2021/06/01/point-to-offer/">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/git-cheatsheet.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -304,7 +304,7 @@
             
             
               
-                Coding Interviews
+                Git Cheatsheet
               
             
           </h1>
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-01T23:25:57+08:00">
-                2021-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-27T11:10:28+08:00">
+                2021-05-27
               </time>
             
 
@@ -355,17 +355,28 @@
       
 
       
-        <h3 id="16-Pow-x-n"><a href="#16-Pow-x-n" class="headerlink" title="16.Pow(x, n)"></a>16.Pow(x, n)</h3><pre><code>def myPow(self, x: float, n: int) -&gt; float:
-    if x == 0.0: return 0.0
-    res = 1
-    if n &lt; 0:
-        x, n = 1 / x, -n
-    while n:
-        if n &amp; 1 == 1:
-            res *= x
-        x *= x
-        n &gt;&gt;= 1 # n &gt;&gt; 1
-    return res</code></pre>
+        <p>delete branch  </p>
+<pre><code>git branch -d &lt;branch&gt;
+git push origin --delete &lt;branch&gt;</code></pre><p>combine commits  </p>
+<pre><code>git rebase -i HEAD~n
+git push -f</code></pre><p>abandon local change:  </p>
+<pre><code>git fetch --all
+git reset --hard origin/master
+git pull</code></pre><p>init:</p>
+<p>Git History  </p>
+<pre><code>April 2005
+Linux Torvalds
+replacement for bitkeeper to manage Linux kernel source code
+open source and free software
+distributed version control
+compatible with linux ,macOS windows
+faster than other SCMs(100times in some cases)
+better safeguards against data corruption
+github launched in 2008
+purchased by Microsoft 2018</code></pre><p>configuration:  </p>
+<pre><code>system : etc/gitconfig            git config --system
+user: ~/.gitconfig                git config --global
+project: my_project/.git/config   git config</code></pre>
       
     </div>
 
@@ -388,7 +399,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CodingInterviews/" rel="tag"># CodingInterviews</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -401,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/06/01/linux-cheatsheet/" rel="next" title="linux cheatsheet">
-                <i class="fa fa-chevron-left"></i> linux cheatsheet
+              <a href="/p/hello-world.html" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -411,8 +422,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/06/02/preSum/" rel="prev" title="preSum">
-                preSum <i class="fa fa-chevron-right"></i>
+              <a href="/p/Min-Stack.html" rel="prev" title="Min-Stack">
+                Min-Stack <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -460,17 +471,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="LeileiWang">
           <p class="site-author-name" itemprop="name">LeileiWang</p>
@@ -535,22 +537,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#16-Pow-x-n"><span class="nav-number">1.</span> <span class="nav-text">16.Pow(x, n)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

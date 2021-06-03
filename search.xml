@@ -5,8 +5,8 @@
     
     <entry>
       <title>preSum</title>
-      <link href="2021/06/02/preSum/"/>
-      <url>2021/06/02/preSum/</url>
+      <link href="../../p/preSum.html"/>
+      <url>../../p/preSum.html</url>
       
         <content type="html"><![CDATA[<pre><code>preSum = [0] + numsfor i in range(1, len(preSum)):    preSum[i] = preSum[i-1] + preSum[i]</code></pre><h3 id="523-Continuous-Subarray-Sum"><a href="#523-Continuous-Subarray-Sum" class="headerlink" title="523. Continuous Subarray Sum"></a>523. Continuous Subarray Sum</h3><p>Given an integer array nums and an integer k, return true if nums has a continuous subarray of size at least two whose elements sum up to a multiple of k, or false otherwise.<br>An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.<br>nums = [23,2,4,6,7], k = 6 True<br>nums = [23,2,6,4,7], k = 13 False<br>TLE:</p><pre><code>preSum = [0] + numsfor i in range(1, len(preSum)):    preSum[i] = preSum[i-1] + preSum[i]for i in range(len(preSum) - 2):    for j in range(i+2, len(preSum)):        if (preSum[j] - preSum[i]) % k == 0:            return Truereturn False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % k == presum[i] % k</p><pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:    preSum = [0] + nums    for i in range(1, len(preSum)):        preSum[i] = preSum[i-1] + preSum[i]    modset = set()    for i in range(len(preSum) - 2):        modset.add(preSum[i] % k)        if preSum[i + 2] % k  in modset:            return True    return False</code></pre><p>Extend : the number of continuous subarray sum:</p><pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:    preSum = [0] + nums    for i in range(1, len(preSum)):        preSum[i] = preSum[i-1] + preSum[i]    modDict = dict()    res = 0    for i in range(len(preSum) - 2):        cur = preSum[i] % k        modDict[cur] = modDict.get(cur, 0) + 1        nex = preSum[i + 2] % k        if nex  in modDict:            res += modDict[nex]    return res</code></pre>]]></content>
       
@@ -24,8 +24,8 @@
     
     <entry>
       <title>Coding Interviews</title>
-      <link href="2021/06/01/point-to-offer/"/>
-      <url>2021/06/01/point-to-offer/</url>
+      <link href="../../p/point-to-offer.html"/>
+      <url>../../p/point-to-offer.html</url>
       
         <content type="html"><![CDATA[<h3 id="16-Pow-x-n"><a href="#16-Pow-x-n" class="headerlink" title="16.Pow(x, n)"></a>16.Pow(x, n)</h3><pre><code>def myPow(self, x: float, n: int) -&gt; float:    if x == 0.0: return 0.0    res = 1    if n &lt; 0:        x, n = 1 / x, -n    while n:        if n &amp; 1 == 1:            res *= x        x *= x        n &gt;&gt;= 1 # n &gt;&gt; 1    return res</code></pre>]]></content>
       
@@ -43,8 +43,8 @@
     
     <entry>
       <title>linux cheatsheet</title>
-      <link href="2021/06/01/linux-cheatsheet/"/>
-      <url>2021/06/01/linux-cheatsheet/</url>
+      <link href="../../p/linux-cheatsheet.html"/>
+      <url>../../p/linux-cheatsheet.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -62,8 +62,8 @@
     
     <entry>
       <title>Python Notes</title>
-      <link href="2021/06/01/python-notes/"/>
-      <url>2021/06/01/python-notes/</url>
+      <link href="../../p/python-notes.html"/>
+      <url>../../p/python-notes.html</url>
       
         <content type="html"><![CDATA[<h3 id="Rotating-functions-in-Deque"><a href="#Rotating-functions-in-Deque" class="headerlink" title="Rotating functions in Deque"></a>Rotating functions in Deque</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import collections as col</span><br><span class="line">my_deque = col.deque(<span class="string">'AABCDDEFD'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'Dequeue: '</span> + str(my_deque)</span></span>)</span><br><span class="line"><span class="selector-id">#rotate</span> to the <span class="attribute">right</span>, <span class="number">3</span> elements</span><br><span class="line">my_deque.rotate(<span class="number">3</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'Deque after rotating:'</span> + str(my_deque)</span></span>)</span><br></pre></td></tr></table></figure><p>Deque after rotating:deque([‘E’, ‘F’, ‘D’, ‘A’, ‘A’, ‘B’, ‘C’, ‘D’, ‘D’])</p>]]></content>
       
@@ -81,8 +81,8 @@
     
     <entry>
       <title>One Python Craftsman</title>
-      <link href="2021/06/01/one-python-craftsman/"/>
-      <url>2021/06/01/one-python-craftsman/</url>
+      <link href="../../p/one-python-craftsman.html"/>
+      <url>../../p/one-python-craftsman.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -100,8 +100,8 @@
     
     <entry>
       <title>Min-Stack</title>
-      <link href="2021/05/31/Min-Stack/"/>
-      <url>2021/05/31/Min-Stack/</url>
+      <link href="../../p/Min-Stack.html"/>
+      <url>../../p/Min-Stack.html</url>
       
         <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.<br>Implement the MinStack class:<br>MinStack() initializes the stack object.<br>void push(val) pushes the element val onto the stack.<br>void pop() removes the element on the top of the stack.<br>int top() gets the top element of the stack.<br>int getMin() retrieves the minimum element in the stack.</p><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>[“MinStack”,”push”,”push”,”push”,”getMin”,”pop”,”top”,”getMin”]<br>[[],[-2],[0],[-3],[],[],[],[]]</p><h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>[null,null,null,null,-3,null,0,-2]</p><h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin(); // return -3<br>minStack.pop();<br>minStack.top();    // return 0<br>minStack.getMin(); // return -2</p><h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints:"></a>Constraints:</h3><p>-231 &lt;= val &lt;= 231 - 1<br>Methods pop, top and getMin operations will always be called on non-empty stacks.<br>At most 3 * 104 calls will be made to push, pop, top, and getMin.</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><pre><code>class MinStack:    def __init__(self):        self.stack = []        self.minStack = []    def push(self, val: int) -&gt; None:        self.stack.append(val)        if not self.minStack or val &lt;= self.minStack[-1]:            self.minStack.append(val)    def pop(self) -&gt; None:        if self.stack:            num = self.stack.pop()            if self.minStack and num == self.minStack[-1]:                self.minStack.pop()    def top(self) -&gt; int:        return self.stack[-1]    def getMin(self) -&gt; int:        return self.minStack[-1]</code></pre><p>One stack</p><pre><code>class MinStack:    def __init__(self):        self.stack = []        self.min_value = -1    def push(self, x: int) -&gt; None:        if not self.stack:            self.stack.append(0)            self.min_value = x        else:            diff = x-self.min_value            self.stack.append(diff)            self.min_value = self.min_value if diff &gt; 0 else x    def pop(self) -&gt; None:        if self.stack:            diff = self.stack.pop()            if diff &lt; 0:                top = self.min_value                self.min_value = top - diff    def top(self) -&gt; int:        return self.min_value if self.stack[-1] &lt; 0 else self.stack[-1] + self.min_value    def getMin(self) -&gt; int:        return self.min_value if self.stack else -1</code></pre>]]></content>
       
@@ -121,8 +121,8 @@
     
     <entry>
       <title>Git Cheatsheet</title>
-      <link href="2021/05/27/git-cheatsheet/"/>
-      <url>2021/05/27/git-cheatsheet/</url>
+      <link href="../../p/git-cheatsheet.html"/>
+      <url>../../p/git-cheatsheet.html</url>
       
         <content type="html"><![CDATA[<p>delete branch  </p><pre><code>git branch -d &lt;branch&gt;git push origin --delete &lt;branch&gt;</code></pre><p>combine commits  </p><pre><code>git rebase -i HEAD~ngit push -f</code></pre><p>abandon local change:  </p><pre><code>git fetch --allgit reset --hard origin/mastergit pull</code></pre><p>init:</p><p>Git History  </p><pre><code>April 2005Linux Torvaldsreplacement for bitkeeper to manage Linux kernel source codeopen source and free softwaredistributed version controlcompatible with linux ,macOS windowsfaster than other SCMs(100times in some cases)better safeguards against data corruptiongithub launched in 2008purchased by Microsoft 2018</code></pre><p>configuration:  </p><pre><code>system : etc/gitconfig            git config --systemuser: ~/.gitconfig                git config --globalproject: my_project/.git/config   git config</code></pre>]]></content>
       
@@ -140,8 +140,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="2021/03/03/hello-world/"/>
-      <url>2021/03/03/hello-world/</url>
+      <link href="../../p/hello-world.html"/>
+      <url>../../p/hello-world.html</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
