@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="UnionFind,">
 
 
 
@@ -87,13 +87,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="PREPARES">
-<meta property="og:url" content="https://wangleileichina.github.io/tags/git/index.html">
+<meta name="description" content="123456789class UnionFind:    def __init__(self, n):        self.size = n        self.p = [i for i in range(n)]        def find(self, x):        # 查找根节点，即当前元素所属的集合        if self.p[x] != x:">
+<meta name="keywords" content="UnionFind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UnionFindSet">
+<meta property="og:url" content="https://wangleileichina.github.io/p/UnionFindSet.html">
 <meta property="og:site_name" content="PREPARES">
+<meta property="og:description" content="123456789class UnionFind:    def __init__(self, n):        self.size = n        self.p = [i for i in range(n)]        def find(self, x):        # 查找根节点，即当前元素所属的集合        if self.p[x] != x:">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-06-05T10:20:00.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PREPARES">
+<meta name="twitter:title" content="UnionFindSet">
+<meta name="twitter:description" content="123456789class UnionFind:    def __init__(self, n):        self.size = n        self.p = [i for i in range(n)]        def find(self, x):        # 查找根节点，即当前元素所属的集合        if self.p[x] != x:">
 
 
 
@@ -121,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://wangleileichina.github.io/tags/git/">
+  <link rel="canonical" href="https://wangleileichina.github.io/p/UnionFindSet.html">
 
 
 
 
 
-  <title> Tag: git | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> UnionFindSet | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -152,7 +157,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,44 +273,153 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2>
-        git
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/UnionFindSet.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                UnionFindSet
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-05T18:16:06+08:00">
+                2021-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFind</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        self.size = n</span><br><span class="line">        self.p = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="comment"># 查找根节点，即当前元素所属的集合</span></span><br><span class="line">        <span class="keyword">if</span> self.p[x] != x:</span><br><span class="line">            self.p[x] = self.find(self.p[x])</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-      <h1 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/p/git-cheatsheet.html" itemprop="url">
-              
-                <span itemprop="name">Git Cheatsheet</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-05-27T11:10:28+08:00" content="2021-05-27">
-          05-27
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UnionFind/" rel="tag"># UnionFind</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/p/LFU.html" rel="next" title="LFU">
+                <i class="fa fa-chevron-left"></i> LFU
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/Sliding-Window.html" rel="prev" title="Sliding Window">
+                Sliding Window <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -313,6 +427,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -503,6 +621,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
