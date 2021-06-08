@@ -8,9 +8,15 @@
       <link href="../../p/bit-manipulation.html"/>
       <url>../../p/bit-manipulation.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><p>remove rightest 1:<br>    n = n &amp; (n - 1)<br>    n -= (~ n + 1) &amp; n</p><p>get the rightest 1:<br>    (~ n + 1) &amp; n</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> bit manipulation </tag>
+            
+        </tags>
       
     </entry>
     
