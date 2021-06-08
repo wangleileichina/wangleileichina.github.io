@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]523. Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuou">
+<meta name="description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuous sub">
 <meta name="keywords" content="preSum">
 <meta property="og:type" content="article">
 <meta property="og:title" content="preSum">
 <meta property="og:url" content="https://wangleileichina.github.io/p/preSum.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]523. Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuou">
+<meta property="og:description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuous sub">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-06-02T15:15:58.616Z">
+<meta property="og:updated_time" content="2021-06-08T12:22:42.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="preSum">
-<meta name="twitter:description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]523. Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuou">
+<meta name="twitter:description" content="preSum = [0] + nums for i in range(1, len(preSum)):     preSum[i] = preSum[i-1] + preSum[i]Continuous Subarray SumGiven an integer array nums and an integer k, return true if nums has a continuous sub">
 
 
 
@@ -357,7 +357,7 @@
       
         <pre><code>preSum = [0] + nums
 for i in range(1, len(preSum)):
-    preSum[i] = preSum[i-1] + preSum[i]</code></pre><h3 id="523-Continuous-Subarray-Sum"><a href="#523-Continuous-Subarray-Sum" class="headerlink" title="523. Continuous Subarray Sum"></a>523. Continuous Subarray Sum</h3><p>Given an integer array nums and an integer k, return true if nums has a continuous subarray of size at least two whose elements sum up to a multiple of k, or false otherwise.<br>An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.<br>nums = [23,2,4,6,7], k = 6 True<br>nums = [23,2,6,4,7], k = 13 False<br>TLE:</p>
+    preSum[i] = preSum[i-1] + preSum[i]</code></pre><h2 id="Continuous-Subarray-Sum"><a href="#Continuous-Subarray-Sum" class="headerlink" title="Continuous Subarray Sum"></a>Continuous Subarray Sum</h2><p>Given an integer array nums and an integer k, return true if nums has a continuous subarray of size at least two whose elements sum up to a multiple of k, or false otherwise.<br>An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.<br>nums = [23,2,4,6,7], k = 6 True<br>nums = [23,2,6,4,7], k = 13 False<br>TLE:</p>
 <pre><code>preSum = [0] + nums
 for i in range(1, len(preSum)):
     preSum[i] = preSum[i-1] + preSum[i]
@@ -388,7 +388,8 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
         nex = preSum[i + 2] % k
         if nex  in modDict:
             res += modDict[nex]
-    return res</code></pre>
+    return res</code></pre><h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode-cn.com/problems/continuous-subarray-sum/" target="_blank" rel="noopener">523. Continuous Subarray Sum</a></p>
+
       
     </div>
 
@@ -506,7 +507,7 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -568,7 +569,7 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#523-Continuous-Subarray-Sum"><span class="nav-number">1.</span> <span class="nav-text">523. Continuous Subarray Sum</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Continuous-Subarray-Sum"><span class="nav-number">1.</span> <span class="nav-text">Continuous Subarray Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode"><span class="nav-number">2.</span> <span class="nav-text">LeetCode</span></a></li></ol></div>
             
 
           </div>
