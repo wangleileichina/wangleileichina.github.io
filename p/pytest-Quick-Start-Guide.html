@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="pytest,">
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Writing and Running Tests Organizing files and packages Useful command-line options Configuration: pytest.ini file  Installing pytesthttps://packaging.python.org/guides/installing-using-pip-and-virtua">
+<meta name="keywords" content="pytest">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://wangleileichina.github.io/p/hello-world.html">
+<meta property="og:title" content="pytest Quick Start Guide">
+<meta property="og:url" content="https://wangleileichina.github.io/p/pytest-Quick-Start-Guide.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Writing and Running Tests Organizing files and packages Useful command-line options Configuration: pytest.ini file  Installing pytesthttps://packaging.python.org/guides/installing-using-pip-and-virtua">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-06-18T16:10:21.135Z">
+<meta property="og:updated_time" content="2021-06-18T16:10:21.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="pytest Quick Start Guide">
+<meta name="twitter:description" content="Writing and Running Tests Organizing files and packages Useful command-line options Configuration: pytest.ini file  Installing pytesthttps://packaging.python.org/guides/installing-using-pip-and-virtua">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://wangleileichina.github.io/p/hello-world.html">
+  <link rel="canonical" href="https://wangleileichina.github.io/p/pytest-Quick-Start-Guide.html">
 
 
 
 
 
-  <title> Hello World | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> pytest Quick Start Guide | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -282,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/hello-world.html">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/pytest-Quick-Start-Guide.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -303,7 +304,7 @@
             
             
               
-                Hello World
+                pytest Quick Start Guide
               
             
           </h1>
@@ -318,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-03-03T08:00:00+08:00">
-                2021-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-15T16:05:22+08:00">
+                2021-06-15
               </time>
             
 
@@ -354,20 +355,64 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="Writing-and-Running-Tests"><a href="#Writing-and-Running-Tests" class="headerlink" title="Writing and Running Tests"></a>Writing and Running Tests</h2><ul>
+<li>Organizing files and packages</li>
+<li>Useful command-line options</li>
+<li>Configuration: pytest.ini file</li>
+</ul>
+<h3 id="Installing-pytest"><a href="#Installing-pytest" class="headerlink" title="Installing pytest"></a>Installing pytest</h3><p><a href="https://packaging.python.org/guides/installing-using-pip-and-virtualenv/" target="_blank" rel="noopener">https://packaging.python.org/guides/installing-using-pip-and-virtualenv/</a><br>python -m venv .env<br>source .env/bin/activate<br>pip install pytest<br>pytest –version</p>
+<h3 id="Writing-and-running-tests"><a href="#Writing-and-running-tests" class="headerlink" title="Writing and running tests"></a>Writing and running tests</h3><p>Note that there’s no need to create classes; just simple functions and plain assert statements are enough, but if you want to use classes to group tests you can do so:</p>
+<pre><code>class TestMechanics:
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+    def test_player_hit(self):
+        ...
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+    def test_player_health_flask(self):
+        ...</code></pre><p>Grouping tests can be useful when you want to put a number of tests under the same scope: you can execute tests based on the class they are in, apply markers to all of the tests in a class (Chapter 3, Markers and Parametrization), and create fixtures bound to a class (Chapter 4, Fixtures).</p>
+<h3 id="Running-tests"><a href="#Running-tests" class="headerlink" title="Running tests"></a>Running tests</h3><blockquote>
+<p>pytest</p>
+</blockquote>
+<p>This will find all of the test_*.py and *_test.py modules in the current directory and below recursively, and will run all of the tests found in those files<br>You can reduce the search to specific directories</p>
+<blockquote>
+<p>pytest tests/core tests/contrib</p>
+</blockquote>
+<p>You can also mix any number of files and directories:</p>
+<blockquote>
+<p>pytest tests/core tests/contrib/test_text_plugin.py</p>
+</blockquote>
+<p>You can execute specific tests by using the syntax <test-file>::<test-function-name>:</test-function-name></test-file></p>
+<blockquote>
+<p>pytest tests/core/test_core.py::test_regex_matching</p>
+</blockquote>
+<p>You can execute all of the test methods of a test class:</p>
+<blockquote>
+<p>pytest tests/contrib/test_text_plugin.py::TestPluginHooks</p>
+</blockquote>
+<p>You can execute a specific test method of a test class using the syntax <test-file>::<test-class>::<test-method-name>:</test-method-name></test-class></test-file></p>
+<blockquote>
+<p>pytest tests/contrib/test_text_plugin.py::TestPluginHooks::test_registration</p>
+</blockquote>
+<p>show a more verbose output, -v</p>
+<blockquote>
+<p> pytest tests/core -v</p>
+</blockquote>
+<p>To see which tests there are without running them, use the –collect-only  flag:<br>–collect-only is especially useful if you want to execute a specific test but can’t remember its exact name.<br>pytest tests/core –collect-only</p>
+<h3 id="Powerful-asserts"><a href="#Powerful-asserts" class="headerlink" title="Powerful asserts"></a>Powerful asserts</h3><p>Contrary to other frameworks, you don’t need to remember various self.assert* or self.expect* functions.</p>
+<p>here’s an example of a failure:</p>
+<p><strong><strong><strong><strong><strong>____</strong></strong></strong></strong></strong> test_default_health <strong><strong><strong><strong><strong>____</strong></strong></strong></strong></strong></p>
+<pre><code>def test_default_health():
+    health = get_default_health(&apos;warrior&apos;)</code></pre><blockquote>
+<pre><code>assert health == 95</code></pre><p>E       assert 80 == 95</p>
+</blockquote>
+<p>tests\test_assert_demo.py:25: AssertionError</p>
+<h4 id="Text-differences"><a href="#Text-differences" class="headerlink" title="Text differences"></a>Text differences</h4><p>When showing the explanation for short strings, pytest uses a simple difference method:<br>E         - warrior<br>E         + sorcerer<br>Longer strings show a smarter delta, using difflib.ndiff to quickly spot the differences<br>E       AssertionError: assert ‘A battle-har… and weapons.’ == ‘A battle-hard… and weapons.’<br>E         - A battle-hardened veteran, favors heavy armor and weapons.<br>E         ?                            ^ ^^^^<br>E         + A battle-hardened veteran, can equip heavy armor and weapons.<br>E         ?                            ^ ^^^^^^^<br>Multiline strings are also treated specially:<br>E       AssertionError: assert ‘A seasoned v… \n’ == ‘A seasoned ve… \n’<br>E         - A seasoned veteran of many battles. High Strength and Dexterity<br>E         ?                                     —–<br>E         + A seasoned veteran of many battles. Strength and Dexterity<br>E           allow to yield heavy armor and weapons, as well as carry<br>E         - more equipment while keeping a light roll. Weak in magic.<br>E         ?               —————————<br>E         + more equipment. Weak in magic.</p>
+<h4 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h4><p>Assertion failures for lists also show only differing items by default:<br>E       AssertionError: assert [‘long sword’…et’, ‘shield’] == [‘long sword’, ‘shield’]<br>E         At index 1 diff: ‘warrior set’ != ‘shield’<br>E         Left contains more items, first extra item: ‘shield’<br>E         Use -v to get the full diff</p>
+<p>Note that pytest shows which index differs, and also that the -v flag can be used to show the complete difference between the lists:<br>E       AssertionError: assert [‘long sword’…et’, ‘shield’] == [‘long sword’, ‘shield’]<br>E         At index 1 diff: ‘warrior set’ != ‘shield’<br>E         Left contains more items, first extra item: ‘shield’<br>E         Full diff:<br>E         - [‘long sword’, ‘warrior set’, ‘shield’]<br>E         ?               —————<br>E         + [‘long sword’, ‘shield’]</p>
+<h4 id="Dictionaries-and-sets"><a href="#Dictionaries-and-sets" class="headerlink" title="Dictionaries and sets"></a>Dictionaries and sets</h4><p>Dictionaries are probably one of the most used data structures in Python, so, unsurprisingly, pytest has specialized representation for them:<br>E       AssertionError: assert {‘knight’: 95…’warrior’: 85} == {‘sorcerer’: 50, ‘warrior’: 85}<br>E         Omitting 1 identical items, use -vv to show<br>E         Differing items:<br>E         {‘sorcerer’: 55} != {‘sorcerer’: 50}<br>E         Left contains more items:<br>E         {‘knight’: 95}<br>E         Use -v to get the full diff</p>
+<p>E         Extra items in the left set:<br>E         ‘knight’</p>
+<h3 id="How-does-pytest-do-it"><a href="#How-does-pytest-do-it" class="headerlink" title="How does pytest do it?"></a>How does pytest do it?</h3><p>By default, Python’s assert statement does not provide any details when it fails, but as we just saw, pytest shows a lot of information about the variables and expressions involved in a failed assertion. So how does pytest do it?</p>
+<p>Pytest is able to provide useful exceptions because it implements a mechanism called assertion rewriting.<br>ssertion rewriting works by installing a custom import hook that intercepts the standard Python import mechanism. When pytest detects that a test file (or plugin) is about to be imported, instead of loading the module, it first compiles the source code into an abstract syntax tree (AST) using the built-in ast module. Then, it searches for any assert statements and rewrites them so that the variables used in the expression are kept so that they can be used to show more helpful messages if the assertion fails. Finally, it saves the rewritten pyc file to disk for caching</p>
+<h4 id="Checking-exceptions-pytest-raises"><a href="#Checking-exceptions-pytest-raises" class="headerlink" title="Checking exceptions: pytest.raises"></a>Checking exceptions: pytest.raises</h4>
       
     </div>
 
@@ -388,6 +433,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/pytest/" rel="tag"># pytest</a>
+          
+        </div>
+      
 
       
         
@@ -397,14 +448,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/p/Designing-Facebook-Messenger.html" rel="next" title="Designing Facebook Messenger">
+                <i class="fa fa-chevron-left"></i> Designing Facebook Messenger
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/p/git-cheatsheet.html" rel="prev" title="Git Cheatsheet">
-                Git Cheatsheet <i class="fa fa-chevron-right"></i>
+              <a href="/p/A-Step-by-Step-Guide.html" rel="prev" title="A Step by Step Guide">
+                A Step by Step Guide <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -537,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Writing-and-Running-Tests"><span class="nav-number">1.</span> <span class="nav-text">Writing and Running Tests</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-pytest"><span class="nav-number">1.1.</span> <span class="nav-text">Installing pytest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Writing-and-running-tests"><span class="nav-number">1.2.</span> <span class="nav-text">Writing and running tests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Running-tests"><span class="nav-number">1.3.</span> <span class="nav-text">Running tests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Powerful-asserts"><span class="nav-number">1.4.</span> <span class="nav-text">Powerful asserts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Text-differences"><span class="nav-number">1.4.1.</span> <span class="nav-text">Text differences</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lists"><span class="nav-number">1.4.2.</span> <span class="nav-text">Lists</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionaries-and-sets"><span class="nav-number">1.4.3.</span> <span class="nav-text">Dictionaries and sets</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-does-pytest-do-it"><span class="nav-number">1.5.</span> <span class="nav-text">How does pytest do it?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Checking-exceptions-pytest-raises"><span class="nav-number">1.5.1.</span> <span class="nav-text">Checking exceptions: pytest.raises</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

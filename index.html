@@ -280,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/bit-manipulation.html">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Consistent-Hashing.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -302,8 +302,8 @@
             
               
                 
-                <a class="post-title-link" href="/p/bit-manipulation.html" itemprop="url">
-                  bit manipulation
+                <a class="post-title-link" href="/p/Consistent-Hashing.html" itemprop="url">
+                  Consistent Hashing
                 </a>
               
             
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-08T22:56:05+08:00">
-                2021-06-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-20T00:42:20+08:00">
+                2021-06-20
               </time>
             
 
@@ -356,378 +356,22 @@
 
       
         
-          
-            <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><p>remove rightest 1:<br>    n = n &amp; (n - 1)<br>    n -= (~ n + 1) &amp; n</p>
-<p>get the rightest 1:<br>    (~ n + 1) &amp; n</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Trie.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/Trie.html" itemprop="url">
-                  Trie
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-08T14:36:26+08:00">
-                2021-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="comment"># TreeNode can search children and determine whether it's end or not</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.children = defaultdict(TrieNode)</span><br><span class="line">        self.is_word = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = TrieNode()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, word)</span>:</span></span><br><span class="line">        node = self.root</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            <span class="comment"># use defaultdict without declaring value</span></span><br><span class="line">            node = node.children[w]</span><br><span class="line">        node.is_word = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, word)</span>:</span></span><br><span class="line">        node = self.root</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> word:</span><br><span class="line">            node = node.children.get(w)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> node.is_word</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">startsWith</span><span class="params">(self, prefix)</span>:</span></span><br><span class="line">        node = self.root</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> prefix:</span><br><span class="line">            node = node.children.get(w)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="comment"># search prefix/word is different</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/heap-sort.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/heap-sort.html" itemprop="url">
-                  heap sort
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-08T14:23:01+08:00">
-                2021-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HeapSort</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">heapify</span><span class="params">(self, n, i)</span>:</span></span><br><span class="line">        <span class="comment"># find largest among root and children</span></span><br><span class="line">        largest = i</span><br><span class="line">        left = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">        right = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> left &lt; n <span class="keyword">and</span> self.nums[i] &lt; self.nums[l]:</span><br><span class="line">            largest = left</span><br><span class="line">        <span class="keyword">if</span> right &lt; n <span class="keyword">and</span> self.nums[largest] &lt; self.nums[right]:</span><br><span class="line">            largest = right</span><br><span class="line">        <span class="keyword">if</span> largest != i:</span><br><span class="line">            self.nums[i], self.nums[largest] = self.nums[largest], self.nums[i]</span><br><span class="line">            self.heapify(n, largest)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self)</span>:</span></span><br><span class="line">        n = len(self.nums)</span><br><span class="line">        <span class="comment"># build max heap (n)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n // <span class="number">2</span> - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            self.heapify(n, i)</span><br><span class="line">        <span class="comment"># heap sort (nlogn)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">            self.nums[i], self.nums[<span class="number">0</span>] = self.nums[<span class="number">0</span>], self.nums[i]</span><br><span class="line">            self.heapify(i, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Sliding-Window.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/Sliding-Window.html" itemprop="url">
-                  Sliding Window
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-06T20:02:28+08:00">
-                2021-06-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>In many problems dealing with an array (or a LinkedList), we are asked to find or calculate something among all the contiguous subarrays (or sublists) of a given size. For example, take a look at this problem:</p>
+          <p><code>Distributed Hash Table</code> (DHT) is one of the fundamental components used in distributed scalable systems. Hash Tables need a key, a value, and a hash function where hash function maps the key to a location where the value is stored:</p>
 <blockquote>
-<p>Given an array, find the average of all contiguous subarrays of size “K” in it.</p>
+<p>index = hash_function(key)</p>
 </blockquote>
-<p>Let’s understand this problem with a real input:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array: [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">-1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>], K=<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p>Here, we are asked to find the average of all contiguous subarrays of size “5” in the given array. Let’s solve this:</p>
+<p>Suppose we are designing a distributed caching system. Given “n” cache servers, an intuitive hash function would be “key % n”. It is simple and commonly used. But it has two major drawbacks:</p>
 <ol>
-<li>For the first 5 numbers (subarray from index 0~4), the average is: (1+3+2+6-1)/5 = 2.2;</li>
-<li>The average of next 5 numbers (subarray from index 1~5) is: (3+2+6-1+4)/5 = 2.8;</li>
-<li>For the next 5 numbers (subarray from index 2~6), the average is: (2+6-1+4+1)/5 = 2.4;</li>
-<li>…</li>
+<li>It is NOT horizontally scalable. Whenever a new cache host is added to the system, all existing mappings are broken. It will be a pain point in maintenance if the caching system contains lots of data. Practically, it becomes difficult to schedule a downtime to update all caching mappings;</li>
+<li>It may NOT be load balanced, especially for non-uniformly distributed data. In practice, it can be easily assumed that the data will not be distributed uniformly. For the caching system, it translates into some caches becoming hot and saturated while the others idle and are almost empty;</li>
 </ol>
-<p>Here is the final output containing the averages of all contiguous subarrays of size 5:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Output: [<span class="number">2.2</span>, <span class="number">2.8</span>, <span class="number">2.4</span>, <span class="number">3.6</span>, <span class="number">2.8</span>]</span><br></pre></td></tr></table></figure>
+<p>In such situations, consistent hashing is a good way to improve the caching system.</p>
+<h2 id="What-is-Consistent-Hashing"><a href="#What-is-Consistent-Hashing" class="headerlink" title="What is Consistent Hashing?"></a>What is Consistent Hashing?</h2><p>Consistent hashing is a very useful strategy for distributed caching systems and DHTs. It allows us to distribute data across a cluster in such a way that will minimize reorganization when nodes are added or removed. Hence, the caching system will be easier to scale up or scale down.</p>
+<p>In Consistent Hashing, when the hash table is resized (e.g., a new cache host is added to the system), only “k/n” keys need to be remapped where “k” is the total number of keys and “n” is the total number of servers. Recall that in a caching system using the “mod” as the hash function, all keys need to be remapped.</p>
+<p>In Consistent Hashing, objects are mapped to the same host if possible. When a host is removed from the system, the objects on that host are shared by other hosts; when a new host is added, it takes its share from a few hosts without touching other’s shares.</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/p/Sliding-Window.html#more" rel="contents">
+            <a class="btn" href="/p/Consistent-Hashing.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -770,7 +414,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/UnionFindSet.html">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/segment-tree.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -792,8 +436,8 @@
             
               
                 
-                <a class="post-title-link" href="/p/UnionFindSet.html" itemprop="url">
-                  UnionFindSet
+                <a class="post-title-link" href="/p/segment-tree.html" itemprop="url">
+                  segment tree
                 </a>
               
             
@@ -809,8 +453,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-05T18:16:06+08:00">
-                2021-06-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-20T00:03:24+08:00">
+                2021-06-20
               </time>
             
 
@@ -847,10 +491,455 @@
       
         
           
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFind</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line">        self.parent = defaultdict(int)</span><br><span class="line">        self.size = defaultdict(int)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(self.nums)):</span><br><span class="line">            self.parent[i] = i</span><br><span class="line">            self.size[i] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="comment"># 查找根节点，即当前元素所属的集合</span></span><br><span class="line">        r = x</span><br><span class="line">        <span class="keyword">if</span> r != self.parent[r]:</span><br><span class="line">            r = self.parent[r]</span><br><span class="line">        <span class="keyword">return</span> r</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(x, y, size)</span>:</span></span><br><span class="line">        x_root = self.find(x)</span><br><span class="line">        y_root = self.find(y)</span><br><span class="line">        <span class="keyword">if</span> x_root != y_root:</span><br><span class="line">            <span class="keyword">if</span> size[x_root] &gt; size[y_root]:</span><br><span class="line">                self.parent[y_root] = x_root</span><br><span class="line">                self.size[x_root] += self.size[y_root]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.parent[x_root] = y_root</span><br><span class="line">                self.size[y_root] += self.size[x_root]</span><br></pre></td></tr></table></figure>
+            <p>线段树是一种非常灵活的数据结构，它可以用于解决多种范围查询问题，比如在对数时间内从数组中找到最小值、最大值、总和、最大公约数、最小公倍数等。<br>线段树既可以用数组也可以用树来实现。对于数组实现，如果索引 i 处的元素不是一个叶节点，那么其左子节点和右子节点分别存储在索引为 2i 和 2i+1 的元素处。<br>我们从叶节点开始，用输入数组的元素 a[0,1,…,n−1] 初始化它们。然后我们逐步向上移动到更高一层来计算父节点的和，直到最后到达线段树的根节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">class NumArray:</span><br><span class="line">    def __init__(self, nums):</span><br><span class="line">        n = len(nums)</span><br><span class="line">        self.tree = [0] * 2 * n</span><br><span class="line">        i, j = n, 0</span><br><span class="line">        while i &lt; 2 * n:</span><br><span class="line">            self.tree[i] = nums[j]</span><br><span class="line">            i += 1</span><br><span class="line">            j += 1</span><br><span class="line">        for i in range(n - 1, 0, -1): # 2n - 1个节点 所以 i 只用取到1</span><br><span class="line">            self.tree[i] = self.tree[i * 2] + self.tree[i * 2 + 1]</span><br><span class="line">    </span><br><span class="line">    def  update(self, i, val):</span><br><span class="line">        n = len(self.tree) // 2</span><br><span class="line">        i += n</span><br><span class="line">        self.tree[i] = val</span><br><span class="line">        while i &gt; 0:</span><br><span class="line">            left, right = i, i</span><br><span class="line">            if i &amp; 1:</span><br><span class="line">                left = i - 1 # i 为偶数就是左节点</span><br><span class="line">            else:</span><br><span class="line">                right = i + 1</span><br><span class="line">            self.tree[i // 2] = self.tree[left] + self.tree[right]</span><br><span class="line">            i //= 2</span><br><span class="line"></span><br><span class="line">    def  sumRange(self, i, j):</span><br><span class="line">        n = len(self.tree) // 2</span><br><span class="line">        i += n</span><br><span class="line">        j += n</span><br><span class="line">        res = 0</span><br><span class="line">        while i &lt;= j:</span><br><span class="line">            if i &amp; 1:</span><br><span class="line">                res += self.tree[i] # 奇数右节点直接加</span><br><span class="line">                i += 1</span><br><span class="line">            if not (j &amp; 1):</span><br><span class="line">                res += self.tree[j]</span><br><span class="line">                j -= 1</span><br><span class="line">            i //= 2</span><br><span class="line">            j //= 2</span><br><span class="line">        return res</span><br><span class="line"></span><br><span class="line">nums = [1, 3, 5, 7, 9]</span><br><span class="line">rangeSum = NumArray(nums)</span><br><span class="line">print(rangeSum.sumRange(2, 3))</span><br><span class="line">rangeSum.update(1, 6)</span><br><span class="line">print(rangeSum.sumRange(1, 3))</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查根</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(x, parent)</span>:</span></span><br><span class="line">    r = x</span><br><span class="line">    <span class="keyword">while</span> r != parent[r]:</span><br><span class="line">        r = parent[r]</span><br><span class="line">    <span class="keyword">return</span> r</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(x, y, parent,size)</span>:</span></span><br><span class="line">    x_root = find(x, parent)</span><br><span class="line">    y_root = find(y, parent)</span><br><span class="line">    <span class="comment"># 将x作为根节点</span></span><br><span class="line">    <span class="keyword">if</span> x_root != y_root:</span><br><span class="line">        <span class="keyword">if</span> size[x_root] &gt; size[y_root]:</span><br><span class="line">            parent[y_root] = x_root</span><br><span class="line">            size[x_root] += size[y_root]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            parent[x_root] = y_root</span><br><span class="line">            size[y_root] += size[x_root]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findCircleNum</span><span class="params">(self, M)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type M: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        parent = defaultdict(int)</span><br><span class="line">        size = defaultdict(int)</span><br><span class="line">        ans = set()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> M:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(M)):</span><br><span class="line">            parent[i] = i</span><br><span class="line">            size[i] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(M)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, len(M[<span class="number">0</span>])):</span><br><span class="line">                <span class="keyword">if</span> M[i][j] == <span class="number">1</span>:</span><br><span class="line">                    union(i, j, parent,size)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> parent:</span><br><span class="line">            ans.add(find(i, parent))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> len(ans)</span><br><span class="line"></span><br><span class="line">a = Solution()</span><br><span class="line">print(a.findCircleNum([[<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]]))</span><br></pre></td></tr></table></figure>
+<p>因为我们在 for 循环的每次迭代中计算一个节点的和。而一个线段树中大约有 2n 个节点。<br>这可以通过以下方式证明：具有 n 个元素的数组线段树有<br>n 个叶节点（数组元素本身）。每一层中的节点数是下面一层中节点数的一半。<br>因此，如果我们按层对节点数求和，我们将得到：n+n/2+n/4+n/8+…+1≈2n</p>
+<p>空间复杂度：O(n)，我们用了 2n 的额外空间来存储整个线段树。</p>
+<h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode-cn.com/problems/range-sum-query-mutable/" target="_blank" rel="noopener">307. Range Sum Query - Mutable</a></p>
+
           
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/A-Step-by-Step-Guide.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/A-Step-by-Step-Guide.html" itemprop="url">
+                  A Step by Step Guide
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-19T17:44:35+08:00">
+                2021-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>A lot of software engineers struggle with System Design Interviews (SDIs) primarily because of three reasons:</p>
+<ol>
+<li>The unstructured nature of SDIs, where the candidates are asked to work on an open-ended design problem that doesn’t have a standard answer;</li>
+<li>Candidates lack experience in developing complex and large scale systems;</li>
+<li>Candidates did not spend enough time to prepare for SDIs;</li>
+</ol>
+<p>Like coding interviews, candidates who haven’t put a deliberate effort to prepare for SDIs, mostly perform poorly, especially at top companies like Google, Facebook, Amazon, Microsoft, etc. In these companies, candidates who do not perform above average have a limited chance to get an offer. On the other hand, a good performance always results in a better offer (higher position and salary) since it shows the candidate’s ability to handle a complex system.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/A-Step-by-Step-Guide.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/pytest-Quick-Start-Guide.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/pytest-Quick-Start-Guide.html" itemprop="url">
+                  pytest Quick Start Guide
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-15T16:05:22+08:00">
+                2021-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Writing-and-Running-Tests"><a href="#Writing-and-Running-Tests" class="headerlink" title="Writing and Running Tests"></a>Writing and Running Tests</h2><ul>
+<li>Organizing files and packages</li>
+<li>Useful command-line options</li>
+<li>Configuration: pytest.ini file</li>
+</ul>
+<h3 id="Installing-pytest"><a href="#Installing-pytest" class="headerlink" title="Installing pytest"></a>Installing pytest</h3><p><a href="https://packaging.python.org/guides/installing-using-pip-and-virtualenv/" target="_blank" rel="noopener">https://packaging.python.org/guides/installing-using-pip-and-virtualenv/</a><br>python -m venv .env<br>source .env/bin/activate<br>pip install pytest<br>pytest –version</p>
+<h3 id="Writing-and-running-tests"><a href="#Writing-and-running-tests" class="headerlink" title="Writing and running tests"></a>Writing and running tests</h3><p>Note that there’s no need to create classes; just simple functions and plain assert statements are enough, but if you want to use classes to group tests you can do so:</p>
+<pre><code>class TestMechanics:
+
+    def test_player_hit(self):
+        ...
+
+    def test_player_health_flask(self):
+        ...</code></pre><p>Grouping tests can be useful when you want to put a number of tests under the same scope: you can execute tests based on the class they are in, apply markers to all of the tests in a class (Chapter 3, Markers and Parametrization), and create fixtures bound to a class (Chapter 4, Fixtures).</p>
+<h3 id="Running-tests"><a href="#Running-tests" class="headerlink" title="Running tests"></a>Running tests</h3><blockquote>
+<p>pytest</p>
+</blockquote>
+<p>This will find all of the test_*.py and *_test.py modules in the current directory and below recursively, and will run all of the tests found in those files<br>You can reduce the search to specific directories</p>
+<blockquote>
+<p>pytest tests/core tests/contrib</p>
+</blockquote>
+<p>You can also mix any number of files and directories:</p>
+<blockquote>
+<p>pytest tests/core tests/contrib/test_text_plugin.py</p>
+</blockquote>
+<p>You can execute specific tests by using the syntax <test-file>::<test-function-name>:</test-function-name></test-file></p>
+<blockquote>
+<p>pytest tests/core/test_core.py::test_regex_matching</p>
+</blockquote>
+<p>You can execute all of the test methods of a test class:</p>
+<blockquote>
+<p>pytest tests/contrib/test_text_plugin.py::TestPluginHooks</p>
+</blockquote>
+<p>You can execute a specific test method of a test class using the syntax <test-file>::<test-class>::<test-method-name>:</test-method-name></test-class></test-file></p>
+<blockquote>
+<p>pytest tests/contrib/test_text_plugin.py::TestPluginHooks::test_registration</p>
+</blockquote>
+<p>show a more verbose output, -v</p>
+<blockquote>
+<p> pytest tests/core -v</p>
+</blockquote>
+<p>To see which tests there are without running them, use the –collect-only  flag:<br>–collect-only is especially useful if you want to execute a specific test but can’t remember its exact name.<br>pytest tests/core –collect-only</p>
+<h3 id="Powerful-asserts"><a href="#Powerful-asserts" class="headerlink" title="Powerful asserts"></a>Powerful asserts</h3><p>Contrary to other frameworks, you don’t need to remember various self.assert* or self.expect* functions.</p>
+<p>here’s an example of a failure:</p>
+<p><strong><strong><strong><strong><strong>____</strong></strong></strong></strong></strong> test_default_health <strong><strong><strong><strong><strong>____</strong></strong></strong></strong></strong></p>
+<pre><code>def test_default_health():
+    health = get_default_health(&apos;warrior&apos;)</code></pre><blockquote>
+<pre><code>assert health == 95</code></pre><p>E       assert 80 == 95</p>
+</blockquote>
+<p>tests\test_assert_demo.py:25: AssertionError</p>
+<h4 id="Text-differences"><a href="#Text-differences" class="headerlink" title="Text differences"></a>Text differences</h4><p>When showing the explanation for short strings, pytest uses a simple difference method:<br>E         - warrior<br>E         + sorcerer<br>Longer strings show a smarter delta, using difflib.ndiff to quickly spot the differences<br>E       AssertionError: assert ‘A battle-har… and weapons.’ == ‘A battle-hard… and weapons.’<br>E         - A battle-hardened veteran, favors heavy armor and weapons.<br>E         ?                            ^ ^^^^<br>E         + A battle-hardened veteran, can equip heavy armor and weapons.<br>E         ?                            ^ ^^^^^^^<br>Multiline strings are also treated specially:<br>E       AssertionError: assert ‘A seasoned v… \n’ == ‘A seasoned ve… \n’<br>E         - A seasoned veteran of many battles. High Strength and Dexterity<br>E         ?                                     —–<br>E         + A seasoned veteran of many battles. Strength and Dexterity<br>E           allow to yield heavy armor and weapons, as well as carry<br>E         - more equipment while keeping a light roll. Weak in magic.<br>E         ?               —————————<br>E         + more equipment. Weak in magic.</p>
+<h4 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h4><p>Assertion failures for lists also show only differing items by default:<br>E       AssertionError: assert [‘long sword’…et’, ‘shield’] == [‘long sword’, ‘shield’]<br>E         At index 1 diff: ‘warrior set’ != ‘shield’<br>E         Left contains more items, first extra item: ‘shield’<br>E         Use -v to get the full diff</p>
+<p>Note that pytest shows which index differs, and also that the -v flag can be used to show the complete difference between the lists:<br>E       AssertionError: assert [‘long sword’…et’, ‘shield’] == [‘long sword’, ‘shield’]<br>E         At index 1 diff: ‘warrior set’ != ‘shield’<br>E         Left contains more items, first extra item: ‘shield’<br>E         Full diff:<br>E         - [‘long sword’, ‘warrior set’, ‘shield’]<br>E         ?               —————<br>E         + [‘long sword’, ‘shield’]</p>
+<h4 id="Dictionaries-and-sets"><a href="#Dictionaries-and-sets" class="headerlink" title="Dictionaries and sets"></a>Dictionaries and sets</h4><p>Dictionaries are probably one of the most used data structures in Python, so, unsurprisingly, pytest has specialized representation for them:<br>E       AssertionError: assert {‘knight’: 95…’warrior’: 85} == {‘sorcerer’: 50, ‘warrior’: 85}<br>E         Omitting 1 identical items, use -vv to show<br>E         Differing items:<br>E         {‘sorcerer’: 55} != {‘sorcerer’: 50}<br>E         Left contains more items:<br>E         {‘knight’: 95}<br>E         Use -v to get the full diff</p>
+<p>E         Extra items in the left set:<br>E         ‘knight’</p>
+<h3 id="How-does-pytest-do-it"><a href="#How-does-pytest-do-it" class="headerlink" title="How does pytest do it?"></a>How does pytest do it?</h3><p>By default, Python’s assert statement does not provide any details when it fails, but as we just saw, pytest shows a lot of information about the variables and expressions involved in a failed assertion. So how does pytest do it?</p>
+<p>Pytest is able to provide useful exceptions because it implements a mechanism called assertion rewriting.<br>ssertion rewriting works by installing a custom import hook that intercepts the standard Python import mechanism. When pytest detects that a test file (or plugin) is about to be imported, instead of loading the module, it first compiles the source code into an abstract syntax tree (AST) using the built-in ast module. Then, it searches for any assert statements and rewrites them so that the variables used in the expression are kept so that they can be used to show more helpful messages if the assertion fails. Finally, it saves the rewritten pyc file to disk for caching</p>
+<h4 id="Checking-exceptions-pytest-raises"><a href="#Checking-exceptions-pytest-raises" class="headerlink" title="Checking exceptions: pytest.raises"></a>Checking exceptions: pytest.raises</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Designing-Facebook-Messenger.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/Designing-Facebook-Messenger.html" itemprop="url">
+                  Designing Facebook Messenger
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-13T16:32:10+08:00">
+                2021-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="What-is-Facebook-Messenger"><a href="#What-is-Facebook-Messenger" class="headerlink" title="What is Facebook Messenger?"></a>What is Facebook Messenger?</h2><p>Facebook Messenger is a software application which provides text-based instant messaging services to its users. Messenger users can chat with their Facebook friends both from cell-phones and Facebook’s website.</p>
+<h2 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h2><p>Our Messenger should meet the following requirements:<br><strong>Functional Requirements</strong>:</p>
+<ol>
+<li>Messenger should support one-on-one conversations between users;</li>
+<li>Messenger should keep track of the online/offline statuses of its users;</li>
+<li>Messenger should support the persistent storage of chat history;</li>
+</ol>
+<p><strong>Non-Functional Requirements</strong>:</p>
+<ol>
+<li>Users should have real-time chat experience with minimum latency;</li>
+<li>Our system should be highly consistent; users should be able to see the same chat history on all their devices;</li>
+<li>Messenger’s high availability is desirable; we can tolerate lower availability in the interest of consistency;</li>
+</ol>
+<p><strong>Extended Requirements</strong>:</p>
+<ol>
+<li>Group Chats: Messenger should support multiple people talking to each other in a group;</li>
+<li>Push notifications: Messenger should be able to notify users of new messages when they are offline;</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/Designing-Facebook-Messenger.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -884,7 +973,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -927,7 +1016,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -938,7 +1027,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
