@@ -280,6 +280,175 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Min-Stack.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/Min-Stack.html" itemprop="url">
+                  Min-Stack
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-31T23:15:01+08:00">
+                2021-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.<br>Implement the MinStack class:<br>MinStack() initializes the stack object.<br>void push(val) pushes the element val onto the stack.<br>void pop() removes the element on the top of the stack.<br>int top() gets the top element of the stack.<br>int getMin() retrieves the minimum element in the stack.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>[“MinStack”,”push”,”push”,”push”,”getMin”,”pop”,”top”,”getMin”]<br>[[],[-2],[0],[-3],[],[],[],[]]</p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>[null,null,null,null,-3,null,0,-2]</p>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>MinStack minStack = new MinStack();<br>minStack.push(-2);<br>minStack.push(0);<br>minStack.push(-3);<br>minStack.getMin(); // return -3<br>minStack.pop();<br>minStack.top();    // return 0<br>minStack.getMin(); // return -2</p>
+<h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints:"></a>Constraints:</h3><p>-231 &lt;= val &lt;= 231 - 1<br>Methods pop, top and getMin operations will always be called on non-empty stacks.<br>At most 3 * 104 calls will be made to push, pop, top, and getMin.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><pre><code>class MinStack:
+
+    def __init__(self):
+        self.stack = []
+        self.minStack = []
+
+    def push(self, val: int) -&gt; None:
+        self.stack.append(val)
+        if not self.minStack or val &lt;= self.minStack[-1]:
+            self.minStack.append(val)
+
+    def pop(self) -&gt; None:
+        if self.stack:
+            num = self.stack.pop()
+            if self.minStack and num == self.minStack[-1]:
+                self.minStack.pop()
+
+    def top(self) -&gt; int:
+        return self.stack[-1]
+
+    def getMin(self) -&gt; int:
+        return self.minStack[-1]</code></pre><p>One stack</p>
+<pre><code>class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_value = -1
+
+    def push(self, x: int) -&gt; None:
+        if not self.stack:
+            self.stack.append(0)
+            self.min_value = x
+        else:
+            diff = x-self.min_value
+            self.stack.append(diff)
+            self.min_value = self.min_value if diff &gt; 0 else x
+
+    def pop(self) -&gt; None:
+        if self.stack:
+            diff = self.stack.pop()
+            if diff &lt; 0:
+                top = self.min_value
+                self.min_value = top - diff
+
+    def top(self) -&gt; int:
+        return self.min_value if self.stack[-1] &lt; 0 else self.stack[-1] + self.min_value
+
+    def getMin(self) -&gt; int:
+        return self.min_value if self.stack else -1</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/git-cheatsheet.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -586,7 +755,7 @@ project: my_project/.git/config   git config</code></pre>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -597,7 +766,7 @@ project: my_project/.git/config   git config</code></pre>
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

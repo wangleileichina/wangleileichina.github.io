@@ -280,6 +280,128 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/heap-sort.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/heap-sort.html" itemprop="url">
+                  heap sort
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-08T14:23:01+08:00">
+                2021-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HeapSort</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">heapify</span><span class="params">(self, n, i)</span>:</span></span><br><span class="line">        <span class="comment"># find largest among root and children</span></span><br><span class="line">        largest = i</span><br><span class="line">        left = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">        right = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> left &lt; n <span class="keyword">and</span> self.nums[i] &lt; self.nums[left]:</span><br><span class="line">            largest = left</span><br><span class="line">        <span class="keyword">if</span> right &lt; n <span class="keyword">and</span> self.nums[largest] &lt; self.nums[right]:</span><br><span class="line">            largest = right</span><br><span class="line">        <span class="keyword">if</span> largest != i:</span><br><span class="line">            self.nums[i], self.nums[largest] = self.nums[largest], self.nums[i]</span><br><span class="line">            self.heapify(n, largest)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self)</span>:</span></span><br><span class="line">        n = len(self.nums)</span><br><span class="line">        <span class="comment"># build max heap (n)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n // <span class="number">2</span> - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            self.heapify(n, i)</span><br><span class="line">        <span class="comment"># heap sort (nlogn)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">            self.nums[i], self.nums[<span class="number">0</span>] = self.nums[<span class="number">0</span>], self.nums[i]</span><br><span class="line">            self.heapify(i, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">heapsort = HeapSort(nums)</span><br><span class="line">heapsort.sort()</span><br><span class="line">print(heapsort.nums)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>非递归实现 空间复杂度 o(1)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HeapSort</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">heapify</span><span class="params">(self, n, i)</span>:</span></span><br><span class="line">        left = i * <span class="number">2</span> + <span class="number">1</span></span><br><span class="line">        right = i * <span class="number">2</span> + <span class="number">2</span></span><br><span class="line">        largest = i</span><br><span class="line">        <span class="keyword">while</span> left &lt; n:</span><br><span class="line">            <span class="keyword">if</span> self.nums[left] &gt; self.nums[i]:</span><br><span class="line">                largest = left</span><br><span class="line">            <span class="keyword">if</span> right &lt; n <span class="keyword">and</span> self.nums[right] &gt; self.nums[largest]:</span><br><span class="line">                largest = right</span><br><span class="line">            <span class="keyword">if</span> largest != i:</span><br><span class="line">                self.nums[i], self.nums[largest] = self.nums[largest], self.nums[i]</span><br><span class="line">            <span class="keyword">else</span>:  <span class="comment">##</span></span><br><span class="line">                <span class="keyword">break</span> <span class="comment">##  </span></span><br><span class="line">            i = largest</span><br><span class="line">            left = <span class="number">2</span> * i + <span class="number">1</span></span><br><span class="line">            right = <span class="number">2</span> * i + <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">heapInsert</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        parent = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i != <span class="number">0</span>:</span><br><span class="line">            parent = (i - <span class="number">1</span>) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> self.nums[parent] &lt; self.nums[i]:</span><br><span class="line">                self.nums[parent], self.nums[i] = self.nums[i], self.nums[parent]</span><br><span class="line">                i = parent</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self)</span>:</span></span><br><span class="line">        n = len(self.nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            self.heapInsert(i)</span><br><span class="line">        <span class="comment"># for i in range(n // 2 - 1, -1, -1):</span></span><br><span class="line">        <span class="comment">#     self.heapify(n, i)</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">            self.nums[<span class="number">0</span>], self.nums[i] = self.nums[i], self.nums[<span class="number">0</span>]</span><br><span class="line">            <span class="comment"># self.heapify(n, i)</span></span><br><span class="line">            self.heapify(i, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">heapsort = HeapSort(nums)</span><br><span class="line">heapsort.sort()</span><br><span class="line">print(heapsort.nums)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Sliding-Window.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -771,157 +893,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/preSum.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/preSum.html" itemprop="url">
-                  preSum
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-02T11:10:15+08:00">
-                2021-06-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>preSum = [0] + nums
-for i in range(1, len(preSum)):
-    preSum[i] = preSum[i-1] + preSum[i]</code></pre><h2 id="Continuous-Subarray-Sum"><a href="#Continuous-Subarray-Sum" class="headerlink" title="Continuous Subarray Sum"></a>Continuous Subarray Sum</h2><p>Given an integer array nums and an integer k, return true if nums has a continuous subarray of size at least two whose elements sum up to a multiple of k, or false otherwise.<br>An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.<br>nums = [23,2,4,6,7], k = 6 True<br>nums = [23,2,6,4,7], k = 13 False<br>TLE:</p>
-<pre><code>preSum = [0] + nums
-for i in range(1, len(preSum)):
-    preSum[i] = preSum[i-1] + preSum[i]
-for i in range(len(preSum) - 2):
-    for j in range(i+2, len(preSum)):
-        if (preSum[j] - preSum[i]) % k == 0:
-            return True
-return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % k == presum[i] % k</p>
-<pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
-    preSum = [0] + nums
-    for i in range(1, len(preSum)):
-        preSum[i] = preSum[i-1] + preSum[i]
-    modset = set()
-    for i in range(len(preSum) - 2):
-        modset.add(preSum[i] % k)
-        if preSum[i + 2] % k  in modset:
-            return True
-    return False</code></pre><p>Extend : the number of continuous subarray sum:</p>
-<pre><code>def checkSubarraySum(self, nums: List[int], k: int) -&gt; bool:
-    preSum = [0] + nums
-    for i in range(1, len(preSum)):
-        preSum[i] = preSum[i-1] + preSum[i]
-    modDict = dict()
-    res = 0
-    for i in range(len(preSum) - 2):
-        cur = preSum[i] % k
-        modDict[cur] = modDict.get(cur, 0) + 1
-        nex = preSum[i + 2] % k
-        if nex  in modDict:
-            res += modDict[nex]
-    return res</code></pre><h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><p><a href="https://leetcode-cn.com/problems/continuous-subarray-sum/" target="_blank" rel="noopener">523. Continuous Subarray Sum</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -969,7 +940,7 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -980,7 +951,7 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
