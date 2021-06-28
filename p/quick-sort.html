@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="sort algorithm,">
+  <meta name="keywords" content="CLRS,">
 
 
 
@@ -88,14 +88,14 @@
 
 
 <meta name="description" content="1234567891011121314151617181920212223242526class QuickSort:    def __init__(self, nums):        self.nums = nums    def partition(self, lo, hi):        pivot = self.nums[hi]        i = lo        for j">
-<meta name="keywords" content="sort algorithm">
+<meta name="keywords" content="CLRS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="quick sort">
 <meta property="og:url" content="https://wangleileichina.github.io/p/quick-sort.html">
 <meta property="og:site_name" content="PREPARES">
 <meta property="og:description" content="1234567891011121314151617181920212223242526class QuickSort:    def __init__(self, nums):        self.nums = nums    def partition(self, lo, hi):        pivot = self.nums[hi]        i = lo        for j">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-06-22T17:18:32.056Z">
+<meta property="og:updated_time" content="2021-06-24T14:49:21.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="quick sort">
 <meta name="twitter:description" content="1234567891011121314151617181920212223242526class QuickSort:    def __init__(self, nums):        self.nums = nums    def partition(self, lo, hi):        pivot = self.nums[hi]        i = lo        for j">
@@ -355,7 +355,9 @@
       
 
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, lo, hi)</span>:</span></span><br><span class="line">        pivot = self.nums[hi]</span><br><span class="line">        i = lo</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lo, hi):</span><br><span class="line">            <span class="keyword">if</span> self.nums[j] &lt; pivot:</span><br><span class="line">                <span class="comment"># i停留在 大于pivot的数， 等到j找到下一个小于pivot的数交换</span></span><br><span class="line">                self.nums[i], self.nums[j] = self.nums[j], self.nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        self.nums[i], self.nums[hi] = self.nums[hi], self.nums[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self, lo, hi)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> lo &gt;= hi:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        idx = self.partition(lo, hi)</span><br><span class="line">        self.sort(lo, idx - <span class="number">1</span>)</span><br><span class="line">        self.sort(idx + <span class="number">1</span>, hi)</span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">quicksort = QuickSort(nums)</span><br><span class="line">quicksort.sort(<span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line">print(quicksort.nums)</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, lo, hi)</span>:</span></span><br><span class="line">        pivot = self.nums[hi]</span><br><span class="line">        i = lo</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lo, hi):</span><br><span class="line">            <span class="keyword">if</span> self.nums[j] &lt; pivot:</span><br><span class="line">                <span class="comment"># i停留在大于pivot的数， 等到j找到下一个小于pivot的数交换</span></span><br><span class="line">                self.nums[i], self.nums[j] = self.nums[j], self.nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        self.nums[i], self.nums[hi] = self.nums[hi], self.nums[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self, lo, hi)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> lo &gt;= hi:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        idx = self.partition(lo, hi)</span><br><span class="line">        self.sort(lo, idx - <span class="number">1</span>)</span><br><span class="line">        self.sort(idx + <span class="number">1</span>, hi)</span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">quicksort = QuickSort(nums)</span><br><span class="line">quicksort.sort(<span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line">print(quicksort.nums)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(lo, hi)</span>:</span></span><br><span class="line">        pivot = nums[hi]</span><br><span class="line">        i = lo</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lo, hi):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &lt; pivot:</span><br><span class="line">                <span class="comment"># i停留在大于pivot的数， 等到j找到下一个小于pivot的数交换</span></span><br><span class="line">                nums[i], nums[j] = nums[j], nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        nums[i], nums[hi] = nums[hi], nums[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(lo, hi)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> lo &gt;= hi:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        idx = partition(lo, hi)</span><br><span class="line">        sort(lo, idx - <span class="number">1</span>)</span><br><span class="line">        sort(idx + <span class="number">1</span>, hi)</span><br><span class="line"></span><br><span class="line">    sort(<span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">quick_sort(nums)</span><br><span class="line">print(nums)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -378,7 +380,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sort-algorithm/" rel="tag"># sort algorithm</a>
+            <a href="/tags/CLRS/" rel="tag"># CLRS</a>
           
         </div>
       
@@ -400,6 +402,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/p/merge-sort.html" rel="prev" title="merge sort">
+                merge sort <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -460,7 +466,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
