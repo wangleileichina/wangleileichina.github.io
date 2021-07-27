@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="SystemDesign,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -87,24 +87,13 @@
 
 
 
-<meta name="description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
-<meta name="keywords" content="SystemDesign">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Polling vs. WebSocket vs. Server-Sent Events">
-<meta property="og:url" content="https://wangleileichina.github.io/p/Polling-vs-WebSocket-vs-Server-Sent-Events.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PREPARES">
+<meta property="og:url" content="https://wangleileichina.github.io/tags/SystemDesign/page/2/index.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/13.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/14.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/15.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/16.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/17.png">
-<meta property="og:updated_time" content="2021-07-26T10:08:59.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Polling vs. WebSocket vs. Server-Sent Events">
-<meta name="twitter:description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
-<meta name="twitter:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/13.png">
+<meta name="twitter:title" content="PREPARES">
 
 
 
@@ -132,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://wangleileichina.github.io/p/Polling-vs-WebSocket-vs-Server-Sent-Events.html">
+  <link rel="canonical" href="https://wangleileichina.github.io/tags/SystemDesign/page/2/">
 
 
 
 
 
-  <title> Polling vs. WebSocket vs. Server-Sent Events | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Tag: SystemDesign | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -163,7 +152,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-right  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,194 +268,74 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Polling-vs-WebSocket-vs-Server-Sent-Events.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Polling vs. WebSocket vs. Server-Sent Events
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-23T15:58:05+08:00">
-                2021-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web request looks like. Following are a sequence of events for regular HTTP request:</p>
-<ol>
-<li>The client opens a connection and requests data from the server;</li>
-<li>The server calculates the response;</li>
-<li>The server sends the response back to the client on the opened request;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/13.png" alt></p>
-<h2 id="Ajax-Polling"><a href="#Ajax-Polling" class="headerlink" title="Ajax Polling"></a>Ajax Polling</h2><p>Polling is a standard technique used by the vast majority of Ajax applications. The basic idea is that the client repeatedly polls (or requests) a server for data. The client makes a request and waits for the server to respond with data. If no data is available, an empty response is returned:</p>
-<ol>
-<li>The client opens a connection and requests data from the server using regular HTTP;</li>
-<li>The requested webpage sends requests to the server at regular intervals (e.g., 0.5 seconds);</li>
-<li>The server calculates the response and sends it back, just like regular HTTP traffic;</li>
-<li>The client repeats the above three steps periodically to get updates from the server;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/14.png" alt></p>
-<p>The problem with Polling is that the client has to keep asking the server for any new data. As a result, a lot of responses are empty, creating HTTP overhead.</p>
-<a id="more"></a>
-
-<h2 id="HTTP-Long-Polling"><a href="#HTTP-Long-Polling" class="headerlink" title="HTTP Long-Polling"></a>HTTP Long-Polling</h2><p>This is a variation of the traditional polling technique that allows the server to push information to a client whenever the data is available. With Long-Polling, the client requests information from the server exactly as in normal polling, but with the expectation that the server may not respond immediately. That’s why this technique is sometimes referred to as a “Hanging GET”:</p>
-<ul>
-<li>If the server does not have any data available for the client, instead of sending an empty response, the server holds the request and waits until some data becomes available;</li>
-<li>Once the data becomes available, a full response is sent to the client. The client then immediately re-request information from the server so that the server will almost always have an available waiting request that it can use to deliver data in response to an event;</li>
-</ul>
-<p>The basic life cycle of an application using HTTP Long-Polling is as follows:</p>
-<ol>
-<li>The client makes an initial request using regular HTTP and then waits for a response;</li>
-<li>The server delays its response until an update is available or a timeout has occurred;</li>
-<li>When an update is available, the server sends a full response to the client;</li>
-<li>The client typically sends a new long-poll request, either immediately upon receiving a response or after a pause to allow an acceptable latency period;</li>
-<li>Each Long-Poll request has a timeout. The client has to reconnect periodically after the connection is closed due to timeouts;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/15.png" alt></p>
-<h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><p>WebSocket provides full-duplex communication channels over a single TCP connection. It provides a persistent connection between a client and a server that both parties can use to start sending data at any time. The client establishes a WebSocket connection through a process known as the WebSocket handshake. If the process succeeds, then the server and client can exchange data in both directions at any time. The WebSocket protocol enables communication between a client and a server with lower overheads, facilitating real-time data transfer from and to the server. This is made possible by providing a standardized way for the server to send content to the browser without being asked by the client and allowing for messages to be passed back and forth while keeping the connection open. In this way, a two-way (bi-directional) ongoing conversation can take place between a client and a server:<br><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/16.png" alt></p>
-<h2 id="Server-Sent-Events-SSE"><a href="#Server-Sent-Events-SSE" class="headerlink" title="Server-Sent Events (SSE)"></a>Server-Sent Events (SSE)</h2><p>Under SSE the client establishes a persistent and long-term connection with the server. The server uses this connection to send data to a client. If the client wants to send data to the server, it would require the use of another technology/protocol to do so:</p>
-<ol>
-<li>Client requests data from a server using regular HTTP;</li>
-<li>The requested webpage opens a connection to the server;</li>
-<li>The server sends the data to the client whenever there’s new information available;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/17.png" alt></p>
-<p>SSE is best when we need real-time traffic from the server to the client or if the server is generating data in a loop and will be sending multiple events to the client.</p>
-
-      
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2>
+        SystemDesign
+        <small>Tag</small>
+      </h2>
     </div>
 
-    <div>
+    
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-
-      
-    </div>
-
-    <div>
-      
+            <a class="post-title-link" href="/p/Designing-Facebook-Messenger.html" itemprop="url">
+              
+                <span itemprop="name">Designing Facebook Messenger</span>
+              
+            </a>
         
+      </h1>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2021-06-13T16:32:10+08:00" content="2021-06-13">
+          06-13
+        </time>
+      </div>
 
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/SystemDesign/" rel="tag"># SystemDesign</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/p/merge-sort.html" rel="next" title="merge sort">
-                <i class="fa fa-chevron-left"></i> merge sort
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/Load-Balancing.html" rel="prev" title="Load Balancing">
-                Load Balancing <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
+    
       
-    </div>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/p/Designing-TinyURL.html" itemprop="url">
+              
+                <span itemprop="name">Designing TinyURL</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2021-06-11T10:50:40+08:00" content="2021-06-11">
+          06-11
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
   </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/tags/SystemDesign/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/tags/SystemDesign/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
           
           </div>
@@ -474,10 +343,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -497,17 +362,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="LeileiWang">
           <p class="site-author-name" itemprop="name">LeileiWang</p>
@@ -572,22 +428,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-Polling"><span class="nav-number">1.</span> <span class="nav-text">Ajax Polling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-Long-Polling"><span class="nav-number">2.</span> <span class="nav-text">HTTP Long-Polling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebSocket"><span class="nav-number">3.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Server-Sent-Events-SSE"><span class="nav-number">4.</span> <span class="nav-text">Server-Sent Events (SSE)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -693,10 +533,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
 
   
 

@@ -87,24 +87,20 @@
 
 
 
-<meta name="description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
+<meta name="description" content="A Proxy Server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short,">
 <meta name="keywords" content="SystemDesign">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Polling vs. WebSocket vs. Server-Sent Events">
-<meta property="og:url" content="https://wangleileichina.github.io/p/Polling-vs-WebSocket-vs-Server-Sent-Events.html">
+<meta property="og:title" content="Proxies">
+<meta property="og:url" content="https://wangleileichina.github.io/p/Proxies.html">
 <meta property="og:site_name" content="PREPARES">
-<meta property="og:description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
+<meta property="og:description" content="A Proxy Server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short,">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/13.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/14.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/15.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/16.png">
-<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/17.png">
-<meta property="og:updated_time" content="2021-07-26T10:08:59.125Z">
+<meta property="og:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Proxies/05.png">
+<meta property="og:updated_time" content="2021-07-27T15:27:12.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Polling vs. WebSocket vs. Server-Sent Events">
-<meta name="twitter:description" content="Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web requ">
-<meta name="twitter:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/13.png">
+<meta name="twitter:title" content="Proxies">
+<meta name="twitter:description" content="A Proxy Server is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short,">
+<meta name="twitter:image" content="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Proxies/05.png">
 
 
 
@@ -132,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://wangleileichina.github.io/p/Polling-vs-WebSocket-vs-Server-Sent-Events.html">
+  <link rel="canonical" href="https://wangleileichina.github.io/p/Proxies.html">
 
 
 
 
 
-  <title> Polling vs. WebSocket vs. Server-Sent Events | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Proxies | PREPARES </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -289,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Polling-vs-WebSocket-vs-Server-Sent-Events.html">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Proxies.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeileiWang">
@@ -310,7 +306,7 @@
             
             
               
-                Polling vs. WebSocket vs. Server-Sent Events
+                Proxies
               
             
           </h1>
@@ -325,8 +321,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-23T15:58:05+08:00">
-                2021-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-27T23:25:39+08:00">
+                2021-07-27
               </time>
             
 
@@ -361,47 +357,19 @@
       
 
       
-        <p>Polling, WebSocket, and Server-Sent Events are popular communication protocols between a client like a web browser and a web server. First, let’s start with understanding what a standard HTTP web request looks like. Following are a sequence of events for regular HTTP request:</p>
-<ol>
-<li>The client opens a connection and requests data from the server;</li>
-<li>The server calculates the response;</li>
-<li>The server sends the response back to the client on the opened request;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/13.png" alt></p>
-<h2 id="Ajax-Polling"><a href="#Ajax-Polling" class="headerlink" title="Ajax Polling"></a>Ajax Polling</h2><p>Polling is a standard technique used by the vast majority of Ajax applications. The basic idea is that the client repeatedly polls (or requests) a server for data. The client makes a request and waits for the server to respond with data. If no data is available, an empty response is returned:</p>
-<ol>
-<li>The client opens a connection and requests data from the server using regular HTTP;</li>
-<li>The requested webpage sends requests to the server at regular intervals (e.g., 0.5 seconds);</li>
-<li>The server calculates the response and sends it back, just like regular HTTP traffic;</li>
-<li>The client repeats the above three steps periodically to get updates from the server;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/14.png" alt></p>
-<p>The problem with Polling is that the client has to keep asking the server for any new data. As a result, a lot of responses are empty, creating HTTP overhead.</p>
+        <p>A <code>Proxy Server</code> is an intermediate server between the client and the back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short, a proxy server is a piece of software or hardware that acts as an intermediary for requests from clients seeking resources from other servers:<br><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Proxies/05.png" alt></p>
+<p>Typically, proxies are used to filter requests, log requests, or sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compressing a resource). Another advantage of a proxy server is that its cache can serve a lot of requests. If multiple clients access a particular resource, the proxy server can cache it and serve it to all the clients without going to the remote server.</p>
 <a id="more"></a>
 
-<h2 id="HTTP-Long-Polling"><a href="#HTTP-Long-Polling" class="headerlink" title="HTTP Long-Polling"></a>HTTP Long-Polling</h2><p>This is a variation of the traditional polling technique that allows the server to push information to a client whenever the data is available. With Long-Polling, the client requests information from the server exactly as in normal polling, but with the expectation that the server may not respond immediately. That’s why this technique is sometimes referred to as a “Hanging GET”:</p>
+<h2 id="Proxy-Server-Types"><a href="#Proxy-Server-Types" class="headerlink" title="Proxy Server Types"></a>Proxy Server Types</h2><p>Proxies can reside on the client’s local server or anywhere between the client and the remote servers. Here are a few famous types of proxy servers:</p>
 <ul>
-<li>If the server does not have any data available for the client, instead of sending an empty response, the server holds the request and waits until some data becomes available;</li>
-<li>Once the data becomes available, a full response is sent to the client. The client then immediately re-request information from the server so that the server will almost always have an available waiting request that it can use to deliver data in response to an event;</li>
+<li><strong>Open Proxy</strong>: An open proxy is a proxy server that is accessible by any Internet user. Generally, a proxy server only allows users within a network group (i.e., a closed proxy) to store and forward Internet services such as DNS or web pages to reduce and control the bandwidth used by the group. With an open proxy, however, any user on the Internet is able to use this forwarding service. There two famous open proxy types:<ol>
+<li><strong>Anonymous Proxy</strong>: This proxy reveals іts identity аs а server but does not disclose the іnіtіаl IP address. Though this proxy server cаn be discovered easily іt cаn be beneficial for some users аs іt hides their IP address;</li>
+<li><strong>Transparent Proxy</strong>: Thіs proxy server аgаіn іdentіfіes іtself, аnd wіth the support of HTTP heаders, the fіrst IP аddress cаn be vіewed. The mаіn benefіt of usіng thіs sort of server іs іts аbіlіty to cаche the websіtes;</li>
+</ol>
+</li>
+<li><strong>Reverse Proxy</strong>: A reverse proxy retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the proxy server itself;</li>
 </ul>
-<p>The basic life cycle of an application using HTTP Long-Polling is as follows:</p>
-<ol>
-<li>The client makes an initial request using regular HTTP and then waits for a response;</li>
-<li>The server delays its response until an update is available or a timeout has occurred;</li>
-<li>When an update is available, the server sends a full response to the client;</li>
-<li>The client typically sends a new long-poll request, either immediately upon receiving a response or after a pause to allow an acceptable latency period;</li>
-<li>Each Long-Poll request has a timeout. The client has to reconnect periodically after the connection is closed due to timeouts;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/15.png" alt></p>
-<h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><p>WebSocket provides full-duplex communication channels over a single TCP connection. It provides a persistent connection between a client and a server that both parties can use to start sending data at any time. The client establishes a WebSocket connection through a process known as the WebSocket handshake. If the process succeeds, then the server and client can exchange data in both directions at any time. The WebSocket protocol enables communication between a client and a server with lower overheads, facilitating real-time data transfer from and to the server. This is made possible by providing a standardized way for the server to send content to the browser without being asked by the client and allowing for messages to be passed back and forth while keeping the connection open. In this way, a two-way (bi-directional) ongoing conversation can take place between a client and a server:<br><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/16.png" alt></p>
-<h2 id="Server-Sent-Events-SSE"><a href="#Server-Sent-Events-SSE" class="headerlink" title="Server-Sent Events (SSE)"></a>Server-Sent Events (SSE)</h2><p>Under SSE the client establishes a persistent and long-term connection with the server. The server uses this connection to send data to a client. If the client wants to send data to the server, it would require the use of another technology/protocol to do so:</p>
-<ol>
-<li>Client requests data from a server using regular HTTP;</li>
-<li>The requested webpage opens a connection to the server;</li>
-<li>The server sends the data to the client whenever there’s new information available;</li>
-</ol>
-<p><img src="https://github.com/wangleileichina/HexoPosts/raw/master/SystemDesign/Polling-vs.-WebSocket-vs.-Server-Sent-Events/17.png" alt></p>
-<p>SSE is best when we need real-time traffic from the server to the client or if the server is generating data in a loop and will be sending multiple events to the client.</p>
 
       
     </div>
@@ -438,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/merge-sort.html" rel="next" title="merge sort">
-                <i class="fa fa-chevron-left"></i> merge sort
+              <a href="/p/Indexes.html" rel="next" title="Indexes">
+                <i class="fa fa-chevron-left"></i> Indexes
               </a>
             
           </div>
@@ -447,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/Load-Balancing.html" rel="prev" title="Load Balancing">
-                Load Balancing <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax-Polling"><span class="nav-number">1.</span> <span class="nav-text">Ajax Polling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-Long-Polling"><span class="nav-number">2.</span> <span class="nav-text">HTTP Long-Polling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebSocket"><span class="nav-number">3.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Server-Sent-Events-SSE"><span class="nav-number">4.</span> <span class="nav-text">Server-Sent Events (SSE)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy-Server-Types"><span class="nav-number">1.</span> <span class="nav-text">Proxy Server Types</span></a></li></ol></div>
             
 
           </div>
