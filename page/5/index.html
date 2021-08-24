@@ -280,6 +280,140 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Consistent-Hashing.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/Consistent-Hashing.html" itemprop="url">
+                  Consistent Hashing
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-20T00:42:20+08:00">
+                2021-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><code>Distributed Hash Table</code> (DHT) is one of the fundamental components used in distributed scalable systems. Hash Tables need a key, a value, and a hash function where hash function maps the key to a location where the value is stored:</p>
+<blockquote>
+<p>index = hash_function(key)</p>
+</blockquote>
+<p>Suppose we are designing a distributed caching system. Given “n” cache servers, an intuitive hash function would be “key % n”. It is simple and commonly used. But it has two major drawbacks:</p>
+<ol>
+<li>It is NOT horizontally scalable. Whenever a new cache host is added to the system, all existing mappings are broken. It will be a pain point in maintenance if the caching system contains lots of data. Practically, it becomes difficult to schedule a downtime to update all caching mappings;</li>
+<li>It may NOT be load balanced, especially for non-uniformly distributed data. In practice, it can be easily assumed that the data will not be distributed uniformly. For the caching system, it translates into some caches becoming hot and saturated while the others idle and are almost empty;</li>
+</ol>
+<p>In such situations, consistent hashing is a good way to improve the caching system.</p>
+<h2 id="What-is-Consistent-Hashing"><a href="#What-is-Consistent-Hashing" class="headerlink" title="What is Consistent Hashing?"></a>What is Consistent Hashing?</h2><p>Consistent hashing is a very useful strategy for distributed caching systems and DHTs. It allows us to distribute data across a cluster in such a way that will minimize reorganization when nodes are added or removed. Hence, the caching system will be easier to scale up or scale down.</p>
+<p>In Consistent Hashing, when the hash table is resized (e.g., a new cache host is added to the system), only “k/n” keys need to be remapped where “k” is the total number of keys and “n” is the total number of servers. Recall that in a caching system using the “mod” as the hash function, all keys need to be remapped.</p>
+<p>In Consistent Hashing, objects are mapped to the same host if possible. When a host is removed from the system, the objects on that host are shared by other hosts; when a new host is added, it takes its share from a few hosts without touching other’s shares.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/Consistent-Hashing.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/segment-tree.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -827,154 +961,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/interview-experience.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/interview-experience.html" itemprop="url">
-                  Interview Experience
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-13T13:58:31+08:00">
-                2021-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>微软苏州分院 bing ads。他家业务很厉害。</p>
-<p>第一轮：<br>不过简历，直接考题。</p>
-<p>有一个数组元素 [a0, a1 …]，从数组中找出连续的数组和为最大。<br>有一个常数n，有一个数组元素 [a0, a1 …] 无重复元素。从数组里面找出所有可能的组合加和是 n，并且输出。<br>第二轮：<br>过简历，面试官不是专业学算法的。如何理解 kafka 框架？在算子开发性能的时候有哪些优化的点？你在团队中发挥什么样的角色？如何使用mapreduce框架？<br>考题：<br>有一个数组（对，全是数组题目），从数组中找出连续数组乘积最大。<br>相关知识点： 数组动态规划<br>相关知识点： 数组动态规划</p>
-<p>第三轮：<br>面试官是学算法的，未来的 leader。如何构建 user 和 item 的特征？双塔模型的结构？<br>深度学习网络 Factorize Machine 相对于线性模型有什么好处？Spark 用过吗？如何构建一个分布式机器学习框架？<br>假设有两个整数 a，b. 那么 a/b 有可能除尽和除不尽。如果除尽，找出循环的单节。图论。</p>
-<p>第四轮：<br>直接上题目：</p>
-<p>假设一个数组只有 “a” 和 “b” 两种 string 组成。如何重新安排数组，使得最多有 3 个 a 相邻，3 个 b 相邻。如果不能安排，返回 None<br>假设有 a，b 两个 int，转成二进制后 c = a | b. 假设从 0-&gt;1, 1-&gt;0 理解为一个 action。最少需要多少个 action 计算 c = a|b？<br>第五轮：<br>问简历，hdfs 的底层原理，mapreduce 底层原理，答得一塌糊涂。不过面试官好像不在乎，说没关系，题目做出来就行。<br>题目：<br>之字型二叉树广度优先遍历<br>。要求一定要用 C 语言写。</p>
-<p>第六轮：<br>boss 面。<br>先问题目：如何实现 a/b。a 和 b 是 string，返回 double。不难。<br>聊人生：家是哪里人，为什么要从字节离职，对微软什么看法。你很优秀，接受平薪吗，微软开得不高。<br>聊完直接得到口头 offer。</p>
-<p>正式offer在3天后获得。</p>
-<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>面试经过</p>
-<p>一面麦克风有问题 没交流的下去挂<br>二面手写快排秒了, 一道hard题目没做到O(n)</p>
-<p>改编自 992. K 个不同整数的子数组<br>没有周五的面试了 可能的话,秋招再见吧</p>
-<p>写写感受吧</p>
-<p>也刷了大半年题了, 最近也一直在面试, 虽然前段时间被阿里的面试轰炸头疼, 还是更想去巨硬wlb, 然而最后挂了, 心里还是十分失落难受的<br>上周特地刷了一周的微软面试题, 微软题库也到一半了, 然而并没有什么卵用, 面试的时候还是找不到最佳思路,虽然面完之后就想起来了<br>可能天生就是智商不够吧<br>找不到工作大不了就回家考公务员吧, 心累</p>
-<p>###<br>腾讯｜后台开发｜面经｜2021｜<br>【一面】<br>1.自我介绍<br>2.大学期间学了什么专业课？</p>
-<p>数据结构熟悉吗？了解过算法吗？<br>Hashmap了解吗 ？它是一种怎样的数据结构？<br>Hashmap为什么是线程不安全的，如果必须保证线程安全要用什么数据结构？（hashtable）<br>Hashmap和hashtable有什么区别？<br>Hashmap底层是什么数据结构实现的？<br>Hashmap查找数据的原理 为什么查找数据快？（我说了底层有红黑树）<br>红黑树和其他的二叉树有什么区别？为什么选择红黑树？<br>10.红黑树是怎么保证自旋次数相对少的？</p>
-<p>有没有项目经验？<br>Spring的三大特性说一下<br>堆和栈了解吗 ？他们有什么区别？（我说堆不会他就没问了）<br>链表和栈分别是什么数据结构 它们有什么区别<br>问一个简单的算法题，怎么样用链表实现栈的功能？（我没答出来，这一题应该是链表采用头插法就可以实现）<br>排序了解过吗？把你知道的排序说一下（这个要说出来排序原理，我说了冒泡，选择，插入，快排，希尔，归并）<br>哪些排序是稳定的 ？为什么稳定？<br>如果现有数据大致有序用什么排序？为什么？（插入排序）<br>现在有一百万个数据，我要找里面最大的一千个，怎么样做？<br>【二面】<br>1.自我介绍</p>
-<p>2.大学期间学了什么专业课？</p>
-<p>3.数据结构熟悉吗？了解过算法吗？</p>
-<p>4.会什么数据库？（我说了mysql和redis）</p>
-<p>5.又问了我hashmap hashmap为什么用红黑树而不用别的平衡树？</p>
-<p>6.红黑树和avl树有什么区别？</p>
-<p>7.哈希算法了解吗？说一下</p>
-<p>8.你用的是哪个版本的jdk？（我用的11）然后他就问jdk不同版本有什么区别 你用的jdk11和jdk8有什么区别了解吗？（没怎么答上来 ）</p>
-<p>9.Jdk源码看过吗 里面用到了哪些设计模式？</p>
-<p>10.单例模式是怎么保证对象单例的？有没有办法可以破坏单例？（反射和反序列化可以破坏）</p>
-<p>说一下反射的原理 ，说一下动态代理<br>Mysql数据库的三大范式<br>Mysql数据库的索引有哪些？<br>一定需要索引吗 ？索引有什么缺点？<br>为什么用索引查询起来会快？索引底层是什么数据结构？<br>B+树是一种什么样的树？B+树和红黑树有什么区别？<br>B+树索引和hash索引的优缺点<br>Redis是什么数据库？和mysql有什么区别？<br>Redis是如何应对高并发的？<br>Redis集群结构，数据结构设计。key是怎么存储的？key命中率低怎么办？<br>找出1T数据中重复率最高的名字<br>算法题：爬楼梯，一次可以跳一步或者两步 求总跳法<br>井盖为什么是圆的你了解过没</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1017,7 +1008,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">41</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
