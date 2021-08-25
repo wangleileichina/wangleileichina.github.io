@@ -280,6 +280,130 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Caching.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/Caching.html" itemprop="url">
+                  Caching
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-26T15:57:24+08:00">
+                2021-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Load balancing helps you scale horizontally across an ever-increasing number of servers, but caching will enable you to make vastly better use of the resources you already have as well as making otherwise unattainable product requirements feasible. Caches take advantage of the locality of reference principle: recently requested data is likely to be requested again. They are used in almost every layer of computing: hardware, operating systems, web browsers, web applications, and more. A cache is like short-term memory: it has a limited amount of space, but is typically faster than the original data source and contains the most recently accessed items. Caches can exist at all levels in architecture, but are often found at the level nearest to the front end where they are implemented to return data quickly without taxing downstream levels.</p>
+<h2 id="Application-Server-Cache"><a href="#Application-Server-Cache" class="headerlink" title="Application Server Cache"></a>Application Server Cache</h2><p>Placing a cache directly on a request layer node enables the local storage of response data. Each time a request is made to the service, the node will quickly return local cached data if it exists. If it is not in the cache, the requesting node will query the data from disk. The cache on one request layer node could also be located both in memory (which is very fast) and on the node’s local disk (faster than going to network storage).</p>
+<p>What happens when you expand this to many nodes? If the request layer is expanded to multiple nodes, it’s still quite possible to have each node host its own cache. However, if your load balancer randomly distributes requests across the nodes, the same request will go to different nodes, thus increasing cache misses. Two choices for overcoming this hurdle are global caches and distributed caches.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/Caching.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Python-语言精要-3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -781,133 +905,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/bisect.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/bisect.html" itemprop="url">
-                  bisect
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-24T22:15:00+08:00">
-                2021-06-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个大于等于target的indx</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_left</span><span class="params">(nums, target)</span>:</span></span><br><span class="line">    lo, hi = <span class="number">0</span>, len(nums) <span class="comment">## hi = len(nums)</span></span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mi = lo + ((hi - lo) &gt;&gt; <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> nums[mi] &gt;= target:</span><br><span class="line">            hi = mi</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lo = mi + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> lo                </span><br><span class="line"></span><br><span class="line">nums=[<span class="number">7</span>]</span><br><span class="line">print(bisect_left(nums, <span class="number">8</span>))</span><br><span class="line">print(bisect_left(nums, <span class="number">7</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_right</span><span class="params">(nums, target)</span>:</span></span><br><span class="line">    lo, hi = <span class="number">0</span>, len(nums) <span class="comment">## hi = len(nums)</span></span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mi = lo + ((hi - lo) &gt;&gt; <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> nums[mi] &gt; target:</span><br><span class="line">            hi = mi</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lo = mi + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> lo                </span><br><span class="line"></span><br><span class="line">nums=[<span class="number">7</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">print(bisect_right(nums, <span class="number">8</span>))</span><br><span class="line">print(bisect_right(nums, <span class="number">7</span>))</span><br><span class="line">print(bisect_right(nums, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">print(bisect.bisect_right(nums, <span class="number">8</span>))</span><br><span class="line">print(bisect.bisect_right(nums, <span class="number">7</span>))</span><br><span class="line">print(bisect.bisect_right(nums, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="number">8</span> <span class="number">4</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_left</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""返回x插入a后所在位置的index（如果a中存在与x等值的元素，则插入到左侧）"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> a[mid] &lt; x: lo = mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>: hi = mid</span><br><span class="line">    <span class="keyword">return</span> lo</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_right</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""返回x插入a后所在位置的index（如果a中存在与x等值的元素，则插入到右侧）"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> x &lt; a[mid]: hi = mid</span><br><span class="line">        <span class="keyword">else</span>: lo = mid+<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> lo</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insort_left</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""将x插入a（如果a中存在与x等值的元素，则插入到左侧）"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> a[mid] &lt; x: lo = mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>: hi = mid</span><br><span class="line">    a.insert(lo, x)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insort_right</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""将x插入a（如果a中存在与x等值的元素，则插入到右侧）"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> x &lt; a[mid]: hi = mid</span><br><span class="line">        <span class="keyword">else</span>: lo = mid+<span class="number">1</span></span><br><span class="line">    a.insert(lo, x)</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -955,7 +952,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

@@ -280,6 +280,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/bisect.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/bisect.html" itemprop="url">
+                  bisect
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-24T22:15:00+08:00">
+                2021-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个大于等于target的indx</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_left</span><span class="params">(nums, target)</span>:</span></span><br><span class="line">    lo, hi = <span class="number">0</span>, len(nums) <span class="comment">## hi = len(nums)</span></span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mi = lo + ((hi - lo) &gt;&gt; <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> nums[mi] &gt;= target:</span><br><span class="line">            hi = mi</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lo = mi + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> lo                </span><br><span class="line"></span><br><span class="line">nums=[<span class="number">7</span>]</span><br><span class="line">print(bisect_left(nums, <span class="number">8</span>))</span><br><span class="line">print(bisect_left(nums, <span class="number">7</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_right</span><span class="params">(nums, target)</span>:</span></span><br><span class="line">    lo, hi = <span class="number">0</span>, len(nums) <span class="comment">## hi = len(nums)</span></span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mi = lo + ((hi - lo) &gt;&gt; <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> nums[mi] &gt; target:</span><br><span class="line">            hi = mi</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lo = mi + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> lo                </span><br><span class="line"></span><br><span class="line">nums=[<span class="number">7</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">print(bisect_right(nums, <span class="number">8</span>))</span><br><span class="line">print(bisect_right(nums, <span class="number">7</span>))</span><br><span class="line">print(bisect_right(nums, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">print(bisect.bisect_right(nums, <span class="number">8</span>))</span><br><span class="line">print(bisect.bisect_right(nums, <span class="number">7</span>))</span><br><span class="line">print(bisect.bisect_right(nums, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="number">8</span> <span class="number">4</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_left</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""返回x插入a后所在位置的index（如果a中存在与x等值的元素，则插入到左侧）"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> a[mid] &lt; x: lo = mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>: hi = mid</span><br><span class="line">    <span class="keyword">return</span> lo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bisect_right</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""返回x插入a后所在位置的index（如果a中存在与x等值的元素，则插入到右侧）"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> x &lt; a[mid]: hi = mid</span><br><span class="line">        <span class="keyword">else</span>: lo = mid+<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> lo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insort_left</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""将x插入a（如果a中存在与x等值的元素，则插入到左侧）"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> a[mid] &lt; x: lo = mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>: hi = mid</span><br><span class="line">    a.insert(lo, x)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insort_right</span><span class="params">(a, x, lo=<span class="number">0</span>, hi=None)</span>:</span></span><br><span class="line">    <span class="string">"""将x插入a（如果a中存在与x等值的元素，则插入到右侧）"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> lo &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'lo must be non-negative'</span>)</span><br><span class="line">    <span class="keyword">if</span> hi <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        hi = len(a)</span><br><span class="line">    <span class="keyword">while</span> lo &lt; hi:</span><br><span class="line">        mid = (lo+hi)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> x &lt; a[mid]: hi = mid</span><br><span class="line">        <span class="keyword">else</span>: lo = mid+<span class="number">1</span></span><br><span class="line">    a.insert(lo, x)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/CAP-Theorem.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -774,125 +901,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/quick-sort.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/quick-sort.html" itemprop="url">
-                  quick sort
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-23T01:15:07+08:00">
-                2021-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        self.nums = nums</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(self, lo, hi)</span>:</span></span><br><span class="line">        pivot = self.nums[hi]</span><br><span class="line">        i = lo</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lo, hi):</span><br><span class="line">            <span class="keyword">if</span> self.nums[j] &lt; pivot:</span><br><span class="line">                <span class="comment"># i停留在大于pivot的数， 等到j找到下一个小于pivot的数交换</span></span><br><span class="line">                self.nums[i], self.nums[j] = self.nums[j], self.nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        self.nums[i], self.nums[hi] = self.nums[hi], self.nums[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self, lo, hi)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> lo &gt;= hi:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        idx = self.partition(lo, hi)</span><br><span class="line">        self.sort(lo, idx - <span class="number">1</span>)</span><br><span class="line">        self.sort(idx + <span class="number">1</span>, hi)</span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">quicksort = QuickSort(nums)</span><br><span class="line">quicksort.sort(<span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line">print(quicksort.nums)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(lo, hi)</span>:</span></span><br><span class="line">        pivot = nums[hi]</span><br><span class="line">        i = lo</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(lo, hi):</span><br><span class="line">            <span class="keyword">if</span> nums[j] &lt; pivot:</span><br><span class="line">                <span class="comment"># i停留在大于pivot的数， 等到j找到下一个小于pivot的数交换</span></span><br><span class="line">                nums[i], nums[j] = nums[j], nums[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        nums[i], nums[hi] = nums[hi], nums[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(lo, hi)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> lo &gt;= hi:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        idx = partition(lo, hi)</span><br><span class="line">        sort(lo, idx - <span class="number">1</span>) <span class="comment">### idx - 1</span></span><br><span class="line">        sort(idx + <span class="number">1</span>, hi)</span><br><span class="line"></span><br><span class="line">    sort(<span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">nums=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">7</span>]</span><br><span class="line">quick_sort(nums)</span><br><span class="line">print(nums)</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -940,7 +948,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
