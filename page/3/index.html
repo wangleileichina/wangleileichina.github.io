@@ -280,6 +280,134 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Data-partitioning.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/Data-partitioning.html" itemprop="url">
+                  Data partitioning
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-26T18:15:20+08:00">
+                2021-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Data partitioning is a technique to break up a big database (DB) into many smaller parts. It is the process of splitting up a DB/table across multiple machines to improve the manageability, performance, availability, and load balancing of an application. The justification for data partitioning is that, after a certain scale point, it is cheaper and more feasible to scale horizontally by adding more machines than to grow it vertically by adding beefier servers.</p>
+<h2 id="Partitioning-Methods"><a href="#Partitioning-Methods" class="headerlink" title="Partitioning Methods"></a>Partitioning Methods</h2><p>There are many different schemes one could use to decide how to break up an application database into multiple smaller DBs. Below are three of the most popular schemes used by various large scale applications:</p>
+<ol>
+<li><strong>Horizontal Partitioning</strong>: In this scheme, we put different rows into different tables. For example, if we are storing different places in a table, we can decide that locations with ZIP codes less than 10000 are stored in one table and places with ZIP Codes greater than 10000 are stored in a separate table. This is also called a range based partitioning as we are storing different ranges of data in separate tables. Horizontal partitioning is also called as Data Sharding.<br> The key problem with this approach is that if the value whose range is used for partitioning isn’t chosen carefully, then the partitioning scheme will lead to unbalanced servers. In the previous example, splitting location based on their Zip Codes assumes that places will be evenly distributed across the different Zip Codes. This assumption is not valid as there will be a lot of places in a thickly populated area like Manhattan as compared to its suburb cities;</li>
+<li><strong>Vertical Partitioning</strong>: In this scheme, we divide our data to store tables related to a specific feature in their own server. For example, if we are building Instagram like application - where we need to store data related to users, photos they upload, and people they follow - we can decide to place user profile information on one DB server, friend lists on another, and photos on a third server.<br> Vertical partitioning is straightforward to implement and has a low impact on the application. The main problem with this approach is that if our application experiences additional growth, then it may be necessary to further partition a feature specific DB across various servers (e.g., it would not be possible for a single server to handle all the metadata queries for 10 billion photos by 140 million users);</li>
+<li><strong>Directory Based Partitioning</strong>: A loosely coupled approach to work around issues mentioned in the above schemes is to create a lookup service which knows your current partitioning scheme and abstracts it away from the DB access code. So, to find out where a particular data entity resides, we query the directory server that holds the mapping between each tuple key to its DB server. This loosely coupled approach means we can perform tasks like adding servers to the DB pool or changing our partitioning scheme without having an impact on the application;</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/Data-partitioning.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Caching.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -779,132 +907,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/Summary-of-Leetcode.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/Summary-of-Leetcode.html" itemprop="url">
-                  Summary of Leetcode
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-30T11:27:21+08:00">
-                2021-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><h3 id="Interval"><a href="#Interval" class="headerlink" title="Interval"></a>Interval</h3><p>[312]<br>[664]<br>[546]<br>[1000]</p>
-<p>###<br>[1774]<br>[1775]</p>
-<h2 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h2><h3 id="monotonic-stack"><a href="#monotonic-stack" class="headerlink" title="monotonic stack"></a>monotonic stack</h3><p>[1475]<br>[503]</p>
-<h2 id="math"><a href="#math" class="headerlink" title="math"></a>math</h2><h3 id="quick-multi"><a href="#quick-multi" class="headerlink" title="quick multi"></a>quick multi</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pow2</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    res = <span class="number">1</span></span><br><span class="line">    base = a</span><br><span class="line">    <span class="keyword">while</span> b:</span><br><span class="line">        <span class="keyword">if</span> b % <span class="number">2</span>: res = res * base % mod</span><br><span class="line">        base = base * base % mod</span><br><span class="line">        b = b // <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-<p>[50]<br>[1922]</p>
-<h2 id="Hashmap"><a href="#Hashmap" class="headerlink" title="Hashmap"></a>Hashmap</h2><h3 id="prefix-hashtable"><a href="#prefix-hashtable" class="headerlink" title="prefix hashtable"></a>prefix hashtable</h3><p>[1915] [930] [560] [974] [1371] [1542] [1590] </p>
-<p>[1074] [325]<br>523 525，1124，528，497，1248， 以及 区域和检索系列的问题</p>
-<h2 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a><a href="https://wangleileichina.github.io/p/Trie.html">Trie</a></h2><p>[208] [720]</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -952,7 +954,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
