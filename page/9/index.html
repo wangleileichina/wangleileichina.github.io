@@ -280,6 +280,128 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/LFU.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeileiWang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PREPARES">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/p/LFU.html" itemprop="url">
+                  LFU
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-05T00:33:05+08:00">
+                2021-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Design and implement a data structure for a Least Frequently Used (LFU) cache.</p>
+<p>Implement the LFUCache class:</p>
+<p>LFUCache(int capacity) Initializes the object with the capacity of the data structure.<br>int get(int key) Gets the value of the key if the key exists in the cache. Otherwise, returns -1.<br>void put(int key, int value) Update the value of the key if present, or inserts the key if not already present. When the cache reaches its capacity, it should invalidate and remove the least frequently used key before inserting a new item. For this problem, when there is a tie (i.e., two or more keys with the same frequency), the least recently used key would be invalidated.<br>To determine the least frequently used key, a use counter is maintained for each key in the cache. The key with the smallest use counter is the least frequently used key.<br>When a key is first inserted into the cache, its use counter is set to 1 (due to the put operation). The use counter for a key in the cache is incremented either a get or put operation is called on it.</p>
+<p>Input<br>[“LFUCache”, “put”, “put”, “get”, “put”, “get”, “get”, “put”, “get”, “get”, “get”]<br>[[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]]<br>Output<br>[null, null, null, 1, null, -1, 3, null, -1, 3, 4]</p>
+<p>Explanation<br>// cnt(x) = the use counter for key x<br>// cache=[] will show the last used order for tiebreakers (leftmost element is  most recent)<br>LFUCache lfu = new LFUCache(2);<br>lfu.put(1, 1);   // cache=[1,_], cnt(1)=1<br>lfu.put(2, 2);   // cache=[2,1], cnt(2)=1, cnt(1)=1<br>lfu.get(1);      // return 1<br>                 // cache=[1,2], cnt(2)=1, cnt(1)=2<br>lfu.put(3, 3);   // 2 is the LFU key because cnt(2)=1 is the smallest, invalidate 2.<br>                 // cache=[3,1], cnt(3)=1, cnt(1)=2<br>lfu.get(2);      // return -1 (not found)<br>lfu.get(3);      // return 3<br>                 // cache=[3,1], cnt(3)=2, cnt(1)=2<br>lfu.put(4, 4);   // Both 1 and 3 have the same cnt, but 1 is LRU, invalidate 1.<br>                 // cache=[4,3], cnt(4)=1, cnt(3)=2<br>lfu.get(1);      // return -1 (not found)<br>lfu.get(3);      // return 3<br>                 // cache=[3,4], cnt(4)=1, cnt(3)=3<br>lfu.get(4);      // return 4<br>                 // cache=[3,4], cnt(4)=2, cnt(3)=3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key = None, val = None)</span>:</span></span><br><span class="line">        self.key = key</span><br><span class="line">        self.val = val</span><br><span class="line">        self.freq = <span class="number">1</span></span><br><span class="line">        self.prev = <span class="literal">None</span></span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DLinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.head = Node()</span><br><span class="line">        self.tail = Node()</span><br><span class="line">        self.head.next = self.tail</span><br><span class="line">        self.tail.prev = self.head</span><br><span class="line">        self.size = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addToHead</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        self.head.next.prev = node</span><br><span class="line">        node.next= self.head.next</span><br><span class="line">        node.prev = self.head</span><br><span class="line">        self.head.next = node</span><br><span class="line">        self.size += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeTail</span><span class="params">(self)</span>:</span></span><br><span class="line">        node = self.tail.prev</span><br><span class="line">        self.removeNode(node)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeNode</span><span class="params">(self, node)</span>:</span></span><br><span class="line">        node.next.prev = node.prev</span><br><span class="line">        node.prev.next = node.next</span><br><span class="line">        self.size -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LFUCache</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, capacity)</span>:</span></span><br><span class="line">        self.key_node = dict()</span><br><span class="line">        self.freq_DLinkedList = dict()</span><br><span class="line">        self.capacity = capacity</span><br><span class="line">        self.minFreq = <span class="number">0</span> <span class="comment">#</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.key_node:</span><br><span class="line">            node = self.key_node[key]</span><br><span class="line">            self.increase_key_freq(key)</span><br><span class="line">            <span class="keyword">return</span> node.val</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">put</span><span class="params">(self, key, val)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.capacity:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.key_node:</span><br><span class="line">            node = self.key_node[key]</span><br><span class="line">            node.val = val</span><br><span class="line">            self.increase_key_freq(key)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># remove first</span></span><br><span class="line">            <span class="keyword">if</span> len(self.key_node) &gt;= self.capacity:  <span class="comment"># &gt;</span></span><br><span class="line">                <span class="comment"># self.freq_DLinkedList[self.minFreq].removeTail()</span></span><br><span class="line">                <span class="comment"># self.key_node.pop(node.key) #</span></span><br><span class="line">                self.remove_Min_freq()</span><br><span class="line">            node = Node(key, val)</span><br><span class="line">            <span class="keyword">if</span> node.freq <span class="keyword">not</span> <span class="keyword">in</span> self.freq_DLinkedList:</span><br><span class="line">                self.freq_DLinkedList[node.freq] = DLinkedList()</span><br><span class="line">            self.key_node[key] = node</span><br><span class="line">            self.freq_DLinkedList[node.freq].addToHead(node)</span><br><span class="line">            self.minFreq = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increase_key_freq</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        node = self.key_node[key]</span><br><span class="line">        freq = node.freq</span><br><span class="line">        self.freq_DLinkedList[freq].removeNode(node)</span><br><span class="line">        node.freq += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> node.freq <span class="keyword">not</span> <span class="keyword">in</span> self.freq_DLinkedList:</span><br><span class="line">            self.freq_DLinkedList[node.freq] = DLinkedList()</span><br><span class="line">        self.freq_DLinkedList[node.freq].addToHead(node)</span><br><span class="line">        <span class="comment"># self.key_node[key] = node</span></span><br><span class="line">        <span class="keyword">if</span> self.minFreq == freq <span class="keyword">and</span> self.freq_DLinkedList[freq].size == <span class="number">0</span>:</span><br><span class="line">            self.minFreq +=<span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove_Min_freq</span><span class="params">(self)</span>:</span></span><br><span class="line">        node = self.freq_DLinkedList[self.minFreq].removeTail()</span><br><span class="line">        self.key_node.pop(node.key)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/LRU.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -775,130 +897,6 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wangleileichina.github.io/p/python-notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeileiWang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="PREPARES">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/p/python-notes.html" itemprop="url">
-                  Python Notes
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-01T15:44:24+08:00">
-                2021-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Rotating-functions-in-Deque"><a href="#Rotating-functions-in-Deque" class="headerlink" title="Rotating functions in Deque"></a>Rotating functions in Deque</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import collections as col</span><br><span class="line">my_deque = col.deque(<span class="string">'AABCDDEFD'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'Dequeue: '</span> + str(my_deque)</span></span>)</span><br><span class="line"><span class="selector-id">#rotate</span> to the <span class="attribute">right</span>, <span class="number">3</span> elements</span><br><span class="line">my_deque.rotate(<span class="number">3</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">'Deque after rotating:'</span> + str(my_deque)</span></span>)</span><br></pre></td></tr></table></figure>
-
-<p>Deque after rotating:deque([‘E’, ‘F’, ‘D’, ‘A’, ‘A’, ‘B’, ‘C’, ‘D’, ‘D’])</p>
-<h3 id="Decorator-MyCache"><a href="#Decorator-MyCache" class="headerlink" title="Decorator MyCache"></a>Decorator MyCache</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timeit</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args)</span>:</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        func(*args)</span><br><span class="line">        end = time.time()</span><br><span class="line">        print(<span class="string">f'<span class="subst">&#123;func.__name__&#125;</span> finished in <span class="subst">&#123;end - start&#125;</span> seconds'</span>)</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@timeit</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sleep_method</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'Done'</span>)</span><br><span class="line"></span><br><span class="line">sleep_method()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCache</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">    self.func = func</span><br><span class="line">    self.cache = dict()</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> args <span class="keyword">not</span> <span class="keyword">in</span> self.cache:</span><br><span class="line">      self.cache[args] = self.func(*args)</span><br><span class="line">    <span class="keyword">return</span> self.cache[args]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@MyCache</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">print(fib(<span class="number">34</span>))</span><br></pre></td></tr></table></figure>
-
-<h3 id="sort-dict"><a href="#sort-dict" class="headerlink" title="sort dict"></a>sort dict</h3><p>by key:<br>d = sorted(d.keys())<br>d = sorted(d.items(),key=lambda x:x[0],reverse=True)</p>
-<p>by value:<br>d = sorted(d.values())<br>d = sorted(d.items(),key=lambda x:x[1],reverse=True)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -946,7 +944,7 @@ return False</code></pre><p>(presum[j] - presum[i]) % k == 0  =&gt; presum[j] % 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
