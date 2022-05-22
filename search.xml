@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Determine if three points are collinear</title>
+      <link href="../../p/Determine-if-three-points-are-collinear.html"/>
+      <url>../../p/Determine-if-three-points-are-collinear.html</url>
+      
+        <content type="html"><![CDATA[<p>题目：已知平面上的三点P1(x1,y1),P2(x2,y2),P3(x3,y3), 判断它们是否共线。</p><p>方法一：判断向量(p1–&gt;p2)和向量(p1–&gt;p3)的斜率是否相等。即 (y2-y1)/(x2-x1) == (y3-y1)/(x3-x1).  这个除式判断可以改写成乘式判断：(y3−y1)(x2−x1)−(y2−y1)(x3−x1)=0  (改写的原因是除法有分母为0或精度等问题）<br>注意，如果坐标本身是浮点型，尽量不要用“==”进行比较，因为在计算机中小数会有一定的误差，这时应该取一定的误差，例如<br>|(y3−y1)(x2−x1)−(y2−y1)(x3−x1)|&lt;=1e−6 </p><p>方法二：用行列式求三角形面积，再判断是否为0.<br>S=(1/2)<em>(x1</em>y2+x2<em>y3+x3</em>y1-x1<em>y3-x2</em>y1-x3*y2) </p><p>方法三：同样是面积法，用海伦公式求三角形面积.  海伦公式：S=sqrt(p<em>(p-a)</em>(p-b)*(p-c)). 其中a,b,c为三角形边长，p=C/2是三角形的半周长。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CLRS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Designing-Ticketmaster</title>
       <link href="../../p/Designing-Ticketmaster.html"/>
       <url>../../p/Designing-Ticketmaster.html</url>
